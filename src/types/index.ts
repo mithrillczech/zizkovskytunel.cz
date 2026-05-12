@@ -16,8 +16,8 @@ export interface NavItem {
 export interface GalleryImage {
   src: string;
   alt: string;
-  width: number;
-  height: number;
+  width?: number;
+  height?: number;
 }
 
 export interface Member {

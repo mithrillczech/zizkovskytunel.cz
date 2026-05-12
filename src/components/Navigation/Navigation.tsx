@@ -69,7 +69,7 @@ export function Navigation({ activeSection, onSectionChange }: NavigationProps) 
 
       {/* Right side: language switcher + social */}
       <div className="flex items-center gap-4">
-        <LanguageSwitcher />
+        <LanguageSwitcher activeSection={activeSection} />
         <div className="w-px h-4 bg-white/10" />
         <a
           href="https://instagram.com"
