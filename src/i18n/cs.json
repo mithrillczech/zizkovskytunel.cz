@@ -1,0 +1,103 @@
+{
+  "nav": {
+    "about": "O nás",
+    "history": "Historie",
+    "gallery": "Galerie",
+    "findUs": "Jak nás najít",
+    "contact": "Kontakt"
+  },
+  "header": {
+    "title": "Žižkovský tunel"
+  },
+  "sections": {
+    "about": {
+      "title": "O nás",
+      "body": "Spolek žižkovského tunelu je nezávislá iniciativa, která vznikla v roce 2025 a sdružuje přední osobnosti z oblasti architektury, umění a kultury. Naším cílem je proměnit žižkovský tunel ve vibrující galerii současného umění a otevřený veřejný prostor.\n\nProjekt propojuje čtvrti Žižkov, Karlín a Holešovice a tvoří kulturní osu procházející srdcem Prahy. Inspirujeme se světově proslulými projekty, jako je High Line v New Yorku.\n\nSpolek stojí na principech otevřenosti, spolupráce a dlouhodobé péče o veřejný prostor.",
+      "members": {
+        "title": "Zakladatelé",
+        "list": [
+          {
+            "name": "Martin Wichterle",
+            "role": "Průmyslník, majitel skupiny Wikov, sklárny Bomma a Rückl"
+          },
+          {
+            "name": "Jiří Řezák",
+            "role": "Architekt, zakladatel studia QARTA Architektura"
+          },
+          {
+            "name": "David Koller",
+            "role": "Hudebník, producent a kulturní iniciátor"
+          },
+          {
+            "name": "Jiří Fajt",
+            "role": "Historik umění a umělecký ředitel, bývalý generální ředitel Národní galerie v Praze"
+          }
+        ]
+      }
+    },
+    "history": {
+      "title": "Historie",
+      "intro": "Žižkovský tunel je jedinečný infrastrukturní prvek, který propojuje tři pražské čtvrti pod horou Vítkov. Dnes slouží jako každodenní koridor pro pěší a cyklisty — a my věříme, že může sloužit i jako průchod do světa kultury.",
+      "timeline": [
+        {
+          "year": "Vznik tunelu",
+          "text": "Tunel byl postaven jako součást dopravní infrastruktury a slouží svému účelu dodnes."
+        },
+        {
+          "year": "2025",
+          "text": "Vznik Spolku žižkovského tunelu. Skupina vizionářů se rozhodla přetvořit tunel v galerii světového formátu."
+        },
+        {
+          "year": "Plán",
+          "text": "Desetiletý plán zahrnuje instalaci tří děl od českých a zahraničních umělců ročně. Každé dílo je navrženo přímo pro prostor tunelu."
+        }
+      ]
+    },
+    "gallery": {
+      "title": "Galerie",
+      "subtitle": "Dokumentace prostoru a jeho proměn"
+    },
+    "findUs": {
+      "title": "Jak nás najít",
+      "address": "Žižkovský tunel\nPraha 3 — Žižkov / Karlín / Holešovice",
+      "directions": "Vstup od Žižkova: ulice Seifertova, poblíž Náměstí Winstona Churchilla.\nVstup od Karlína: ulice Šaldova.\nMHD: Metro B Florenc, tramvaj Tachovské náměstí nebo Lipanská.",
+      "mapNote": "Tunel je přístupný denně pro pěší a cyklisty."
+    },
+    "contact": {
+      "title": "Kontakt",
+      "subtitle": "Máte zájem o spolupráci, partnerství nebo mediální dotazy? Napište nám.",
+      "namePlaceholder": "Celé jméno",
+      "emailPlaceholder": "E-mailová adresa",
+      "messagePlaceholder": "Vaše zpráva...",
+      "sendButton": "Odeslat zprávu",
+      "successMessage": "Děkujeme! Vaše zpráva byla odeslána. Brzy se vám ozveme.",
+      "errorMessage": "Omlouváme se, zprávu se nepodařilo odeslat. Zkuste to prosím znovu.",
+      "nameLabel": "Jméno",
+      "emailLabel": "E-mail",
+      "messageLabel": "Zpráva"
+    }
+  },
+  "footer": {
+    "copyright": "© {year} Spolek žižkovského tunelu. Všechna práva vyhrazena.",
+    "nav": {
+      "about": "O nás",
+      "history": "Historie",
+      "gallery": "Galerie",
+      "findUs": "Jak nás najít",
+      "contact": "Kontakt"
+    }
+  },
+  "meta": {
+    "title": "Žižkovský tunel — Spolek",
+    "description": "Transformujeme žižkovský tunel v galerii světového umění. Projekt propojující Žižkov, Karlín a Holešovice – kulturní osa Prahy."
+  },
+  "accessibility": {
+    "openMenu": "Otevřít menu",
+    "closeMenu": "Zavřít menu",
+    "nextImage": "Další obrázek",
+    "prevImage": "Předchozí obrázek",
+    "instagramLink": "Navštívit Instagram",
+    "facebookLink": "Navštívit Facebook",
+    "languageSwitcher": "Přepnout jazyk"
+  }
+}

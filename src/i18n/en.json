@@ -1,0 +1,103 @@
+{
+  "nav": {
+    "about": "About Us",
+    "history": "History",
+    "gallery": "Gallery",
+    "findUs": "How to Find Us",
+    "contact": "Contact"
+  },
+  "header": {
+    "title": "Žižkov Tunnel"
+  },
+  "sections": {
+    "about": {
+      "title": "About Us",
+      "body": "The Žižkov Tunnel Association is an independent initiative founded in 2025 by prominent figures from the fields of architecture, art, and culture. Our goal is to transform the Žižkov Tunnel into a vibrant gallery of contemporary art and an open public space.\n\nThe project connects the districts of Žižkov, Karlín, and Holešovice, forming a cultural axis through the heart of Prague. We draw inspiration from world-renowned projects such as the High Line in New York City.\n\nThe association is built on principles of openness, collaboration, and long-term care for public space.",
+      "members": {
+        "title": "Founding Members",
+        "list": [
+          {
+            "name": "Martin Wichterle",
+            "role": "Industrialist, owner of the Wikov engineering group and the Bomma and Rückl glassworks"
+          },
+          {
+            "name": "Jiří Řezák",
+            "role": "Architect and owner of the QARTA Architektura studio"
+          },
+          {
+            "name": "David Koller",
+            "role": "Musician, producer, and cultural initiator"
+          },
+          {
+            "name": "Jiří Fajt",
+            "role": "Art historian and artistic director, former Director General of the National Gallery in Prague"
+          }
+        ]
+      }
+    },
+    "history": {
+      "title": "History",
+      "intro": "The Žižkov Tunnel is a unique piece of infrastructure connecting three Prague districts beneath Vítkov Hill. Today it serves as a daily corridor for pedestrians and cyclists — and we believe it can also serve as a passage into the world of culture.",
+      "timeline": [
+        {
+          "year": "Origins",
+          "text": "The tunnel was built as part of the city's transport infrastructure and continues to serve that purpose to this day."
+        },
+        {
+          "year": "2025",
+          "text": "The Žižkov Tunnel Association is founded. A group of visionaries decides to transform the tunnel into a world-class gallery."
+        },
+        {
+          "year": "The Plan",
+          "text": "A ten-year plan envisions three installations per year by Czech and international artists. Each work is designed specifically for the tunnel space."
+        }
+      ]
+    },
+    "gallery": {
+      "title": "Gallery",
+      "subtitle": "Documentation of the space and its transformations"
+    },
+    "findUs": {
+      "title": "How to Find Us",
+      "address": "Žižkov Tunnel\nPrague 3 — Žižkov / Karlín / Holešovice",
+      "directions": "Entrance from Žižkov: Seifertova street, near Náměstí Winstona Churchilla.\nEntrance from Karlín: Šaldova street.\nPublic transport: Metro B Florenc, tram Tachovské náměstí or Lipanská.",
+      "mapNote": "The tunnel is open daily to pedestrians and cyclists."
+    },
+    "contact": {
+      "title": "Contact",
+      "subtitle": "Interested in collaboration, partnership, or media inquiries? Write to us.",
+      "namePlaceholder": "Full name",
+      "emailPlaceholder": "Email address",
+      "messagePlaceholder": "Your message...",
+      "sendButton": "Send Message",
+      "successMessage": "Thank you! Your message has been sent. We will get back to you shortly.",
+      "errorMessage": "We're sorry, the message could not be sent. Please try again.",
+      "nameLabel": "Name",
+      "emailLabel": "Email",
+      "messageLabel": "Message"
+    }
+  },
+  "footer": {
+    "copyright": "© {year} Žižkov Tunnel Association. All rights reserved.",
+    "nav": {
+      "about": "About Us",
+      "history": "History",
+      "gallery": "Gallery",
+      "findUs": "How to Find Us",
+      "contact": "Contact"
+    }
+  },
+  "meta": {
+    "title": "Žižkov Tunnel — Association",
+    "description": "Transforming the Žižkov Tunnel into a world-class art gallery. A project connecting Žižkov, Karlín and Holešovice — the cultural axis of Prague."
+  },
+  "accessibility": {
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "nextImage": "Next image",
+    "prevImage": "Previous image",
+    "instagramLink": "Visit Instagram",
+    "facebookLink": "Visit Facebook",
+    "languageSwitcher": "Switch language"
+  }
+}
