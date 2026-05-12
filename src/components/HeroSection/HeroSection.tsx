@@ -64,6 +64,10 @@ export function HeroSection({
 
     ambientRef.current?.stop();
     ambientRef.current = null;
+    // Snap ambient scale back to neutral so every transition starts from the same visual state.
+    // Without this the first click zooms from wherever the breathing cycle happened to pause,
+    // making it look different from subsequent transitions.
+    animate(el, { scale: 1 }, { duration: 0 });
 
     // Phase 1 — accelerating rush into the tunnel (3D perspective depth)
     // Peripheral vignette darkens simultaneously to sell the speed sensation
@@ -76,8 +80,9 @@ export function HeroSection({
 
     animate(el, { z: 460, filter: "blur(20px)" }, { duration: RUSH_DURATION, ease: RUSH_EASE })
     .then(() => {
-      // Hard cut — instant return to origin depth, clear peripheral vignette
-      animate(el, { z: 0, filter: "blur(0px)" }, { duration: 0 });
+      // Hard cut — instant return to origin depth, clear peripheral vignette.
+      // Also reset scale so the darkness reveal always shows the image at 1:1 scale.
+      animate(el, { z: 0, filter: "blur(0px)", scale: 1 }, { duration: 0 });
       if (vignette) animate(vignette, { opacity: 0 }, { duration: 0 });
 
       if (!overlay) {
