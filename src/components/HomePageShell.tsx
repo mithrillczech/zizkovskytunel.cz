@@ -19,6 +19,9 @@ interface HomePageShellProps {
   galleryImages: GalleryImage[];
 }
 
+// Duration must match SectionPanel exit transition (300ms animation + 50ms delay)
+const PANEL_EXIT_MS = 360;
+
 function HomePageInner({ galleryImages }: HomePageShellProps) {
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -29,11 +32,15 @@ function HomePageInner({ galleryImages }: HomePageShellProps) {
   // visibleSection is what's actually rendered in the panel — updated at animation midpoint
   const [visibleSection, setVisibleSection] = useState<SectionId>(initialSection);
   const pendingSection = useRef<SectionId>(initialSection);
+  // Kept current every render so handleSectionChange can read it without stale closure
+  const visibleSectionRef = useRef<SectionId>(initialSection);
+  visibleSectionRef.current = visibleSection;
 
   const handleSectionChange = useCallback(
     (section: SectionId) => {
       pendingSection.current = section;
-      setActiveSection(section);
+
+      // Update URL immediately
       const params = new URLSearchParams(searchParams.toString());
       if (section === "none") {
         params.delete("section");
@@ -42,6 +49,15 @@ function HomePageInner({ galleryImages }: HomePageShellProps) {
       }
       const query = params.toString();
       router.replace(`${pathname}${query ? `?${query}` : ""}`, { scroll: false });
+
+      if (visibleSectionRef.current !== "none") {
+        // Panel is currently open — exit it first, then start the tunnel
+        setVisibleSection("none");
+        setTimeout(() => setActiveSection(section), PANEL_EXIT_MS);
+      } else {
+        // No panel showing — start tunnel immediately
+        setActiveSection(section);
+      }
     },
     [router, pathname, searchParams]
   );

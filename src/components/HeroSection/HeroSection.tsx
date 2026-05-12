@@ -16,6 +16,7 @@ export function HeroSection({
   children,
 }: HeroSectionProps) {
   const imgRef = useRef<HTMLDivElement>(null);
+  const overlayRef = useRef<HTMLDivElement>(null);
   const isFirstMount = useRef(true);
   const ambientRef = useRef<ReturnType<typeof animate> | null>(null);
 
@@ -53,6 +54,7 @@ export function HeroSection({
     }
 
     const el = imgRef.current;
+    const overlay = overlayRef.current;
     if (!el) return;
 
     const prefersReduced =
@@ -60,7 +62,6 @@ export function HeroSection({
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     if (prefersReduced) {
-      // Skip animation, just call midpoint immediately
       setTimeout(onTransitionMidpoint, 0);
       return;
     }
@@ -68,21 +69,33 @@ export function HeroSection({
     ambientRef.current?.stop();
     ambientRef.current = null;
 
-    // Phase 1: rush in
+    // Phase 1 — accelerating rush into the tunnel
     animate(
       el,
-      { scale: 1.25, filter: "blur(12px)" },
-      { duration: 0.4, ease: [0.4, 0, 1, 1] }
+      { scale: 5, filter: "blur(20px)" },
+      { duration: 0.8, ease: [0.3, 0, 0.9, 1] }
     ).then(() => {
-      // Midpoint — swap content
+      // Hard cut — no zoom-out tween, instant return to original
+      animate(el, { scale: 1, filter: "blur(0px)" }, { duration: 0 });
+
+      // Swap section content while darkness covers the screen
       onTransitionMidpoint();
 
-      // Phase 2: emerge
+      if (!overlay) return;
+
+      // Cover the screen instantly with the black overlay at full size
+      overlay.style.opacity = "1";
+      overlay.style.clipPath = "circle(150% at 50% 50%)";
+
+      // Phase 2 — darkness collapses from edges toward the center
+      // (outer image edges revealed first, like tunnel lights turning on as you pass)
       animate(
-        el,
-        { scale: 1, filter: "blur(0px)" },
-        { duration: 0.5, ease: [0, 0, 0.2, 1] }
-      );
+        overlay,
+        { clipPath: "circle(0% at 50% 50%)" },
+        { duration: 0.9, ease: [0, 0, 0.4, 1] }
+      ).then(() => {
+        overlay.style.opacity = "0";
+      });
     });
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeSection]);
@@ -101,8 +114,14 @@ export function HeroSection({
           backgroundColor: "#1a1a1a",
         }}
       />
-      {/* Dark vignette overlay for readability */}
+      {/* Permanent dark vignette for readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-bg/60 via-transparent to-bg/80" />
+      {/* Tunnel reveal overlay — black circle that collapses from edges to center */}
+      <div
+        ref={overlayRef}
+        className="absolute inset-0 bg-black pointer-events-none"
+        style={{ opacity: 0, clipPath: "circle(0% at 50% 50%)" }}
+      />
       {children}
     </div>
   );
