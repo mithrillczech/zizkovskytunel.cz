@@ -38,7 +38,7 @@ export function HeroSection({
   useEffect(() => {
     startAmbient();
     return () => { ambientRef.current?.stop(); };
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []);
 
   // Tunnel transition on section change
   useEffect(() => {
@@ -63,14 +63,14 @@ export function HeroSection({
     ambientRef.current?.stop();
     ambientRef.current = null;
 
-    // Phase 1 — accelerating rush into the tunnel
+    // Phase 1 — accelerating rush into the tunnel (3D perspective depth)
     animate(
       el,
-      { scale: 7.5, filter: "blur(20px)" },
+      { z: 460, filter: "blur(20px)" },
       { duration: 0.55, ease: [0.15, 0, 1, 1] }
     ).then(() => {
-      // Hard cut — no zoom-out tween, instant return to original
-      animate(el, { scale: 1, filter: "blur(0px)" }, { duration: 0 });
+      // Hard cut — instant return to origin depth
+      animate(el, { z: 0, filter: "blur(0px)" }, { duration: 0 });
 
       if (!overlay) {
         onTransitionMidpoint();
@@ -78,9 +78,10 @@ export function HeroSection({
         return;
       }
 
-      // Cover the screen instantly with the black overlay at full size
-      overlay.style.opacity = "1";
-      overlay.style.clipPath = "circle(150% at 50% 50%)";
+      // Reset overlay through Framer Motion so its internal cache is always in sync.
+      // Direct .style assignments are invisible to FM and cause it to skip subsequent
+      // animations (it sees no change from its cached value).
+      animate(overlay, { opacity: 1, clipPath: "circle(150% at 50% 50%)" }, { duration: 0 });
 
       // Phase 2 — darkness collapses from edges toward the center
       // (outer image edges revealed first, like tunnel lights turning on as you pass)
@@ -89,7 +90,7 @@ export function HeroSection({
         { clipPath: "circle(0% at 50% 50%)" },
         { duration: 0.9, ease: [0, 0, 0.4, 1] }
       ).then(() => {
-        overlay.style.opacity = "0";
+        animate(overlay, { opacity: 0 }, { duration: 0 });
         // Content box appears only after the full darkness reveal is complete
         onTransitionMidpoint();
         // Resume ambient pulsing now that the transition is fully done
@@ -100,7 +101,7 @@ export function HeroSection({
   }, [activeSection]);
 
   return (
-    <div className="fixed inset-0 z-0 overflow-hidden" aria-hidden="true">
+    <div className="fixed inset-0 z-0 overflow-hidden" style={{ perspective: "500px" }} aria-hidden="true">
       {/* The tunnel image */}
       <div
         ref={imgRef}
