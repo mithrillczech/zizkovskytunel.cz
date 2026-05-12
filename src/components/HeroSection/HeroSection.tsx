@@ -16,6 +16,7 @@ export function HeroSection({
   children,
 }: HeroSectionProps) {
   const imgRef = useRef<HTMLDivElement>(null);
+  const vignetteRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
   const isFirstMount = useRef(true);
   const ambientRef = useRef<ReturnType<typeof animate> | null>(null);
@@ -48,6 +49,7 @@ export function HeroSection({
     }
 
     const el = imgRef.current;
+    const vignette = vignetteRef.current;
     const overlay = overlayRef.current;
     if (!el) return;
 
@@ -64,13 +66,19 @@ export function HeroSection({
     ambientRef.current = null;
 
     // Phase 1 — accelerating rush into the tunnel (3D perspective depth)
-    animate(
-      el,
-      { z: 460, filter: "blur(20px)" },
-      { duration: 0.55, ease: [0.15, 0, 1, 1] }
-    ).then(() => {
-      // Hard cut — instant return to origin depth
+    // Peripheral vignette darkens simultaneously to sell the speed sensation
+    const RUSH_DURATION = 0.41;
+    const RUSH_EASE: [number, number, number, number] = [0.15, 0, 1, 1];
+
+    if (vignette) {
+      animate(vignette, { opacity: 1 }, { duration: RUSH_DURATION, ease: RUSH_EASE });
+    }
+
+    animate(el, { z: 460, filter: "blur(20px)" }, { duration: RUSH_DURATION, ease: RUSH_EASE })
+    .then(() => {
+      // Hard cut — instant return to origin depth, clear peripheral vignette
       animate(el, { z: 0, filter: "blur(0px)" }, { duration: 0 });
+      if (vignette) animate(vignette, { opacity: 0 }, { duration: 0 });
 
       if (!overlay) {
         onTransitionMidpoint();
@@ -81,7 +89,7 @@ export function HeroSection({
       // Reset overlay through Framer Motion so its internal cache is always in sync.
       // Direct .style assignments are invisible to FM and cause it to skip subsequent
       // animations (it sees no change from its cached value).
-      animate(overlay, { opacity: 1, clipPath: "circle(150% at 50% 50%)" }, { duration: 0 });
+      animate(overlay, { opacity: 1, clipPath: "circle(150% at 50% 50%)", filter: "blur(50px)" }, { duration: 0 });
 
       // Phase 2 — darkness collapses from edges toward the center
       // (outer image edges revealed first, like tunnel lights turning on as you pass)
@@ -90,7 +98,7 @@ export function HeroSection({
         { clipPath: "circle(0% at 50% 50%)" },
         { duration: 0.9, ease: [0, 0, 0.4, 1] }
       ).then(() => {
-        animate(overlay, { opacity: 0 }, { duration: 0 });
+        animate(overlay, { opacity: 0, filter: "blur(0px)" }, { duration: 0 });
         // Content box appears only after the full darkness reveal is complete
         onTransitionMidpoint();
         // Resume ambient pulsing now that the transition is fully done
@@ -116,6 +124,15 @@ export function HeroSection({
       />
       {/* Permanent dark vignette for readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-bg/60 via-transparent to-bg/80" />
+      {/* Peripheral speed vignette — edges darken during Phase 1 zoom */}
+      <div
+        ref={vignetteRef}
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          opacity: 0,
+          background: "radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.92) 100%)",
+        }}
+      />
       {/* Tunnel reveal overlay — black circle that collapses from edges to center */}
       <div
         ref={overlayRef}

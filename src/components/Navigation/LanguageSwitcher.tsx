@@ -9,6 +9,9 @@ import type { SectionId } from "@/types";
 const LOCALES = [
   { code: "cs", label: "CS" },
   { code: "en", label: "EN" },
+  { code: "de", label: "DE" },
+  { code: "pl", label: "PL" },
+  { code: "sk", label: "SK" },
   // Add more locales here — dropdown grows automatically
 ];
 

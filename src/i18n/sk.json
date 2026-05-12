@@ -1,0 +1,115 @@
+{
+  "nav": {
+    "about": "O nás",
+    "history": "História",
+    "gallery": "Galéria",
+    "findUs": "Ako nás nájdete",
+    "contact": "Kontakt"
+  },
+  "header": {
+    "title": "Žižkovský tunel"
+  },
+  "sections": {
+    "about": {
+      "title": "O nás",
+      "body": "Spolok žižkovského tunela je nezávislá iniciatíva, ktorá vznikla v roku 2025 a združuje popredné osobnosti zo sveta architektúry, umenia a kultúry. Naším cieľom je premeniť žižkovský tunel na živú galériu súčasného umenia a otvorený verejný priestor.\n\nProjekt spája štvrte Žižkov, Karlín a Holešovice a vytvára kultúrnu os prechádzajúcu srdcom Prahy. Inšpirujeme sa svetoznámymi projektmi, ako je High Line v New Yorku.\n\nSpolok stojí na princípoch otvorenosti, spolupráce a dlhodobej starostlivosti o verejný priestor.",
+      "members": {
+        "title": "Zakladatelia",
+        "list": [
+          {
+            "name": "Martin Wichterle",
+            "role": "Priemyselník, majiteľ skupiny Wikov a sklární Bomma a Rückl"
+          },
+          {
+            "name": "Jiří Řezák",
+            "role": "Architekt a majiteľ štúdia QARTA Architektura"
+          },
+          {
+            "name": "David Koller",
+            "role": "Hudobník, producent a kultúrny iniciátor"
+          },
+          {
+            "name": "Jiří Fajt",
+            "role": "Historik umenia a umelecký riaditeľ, bývalý generálny riaditeľ Národnej galérie v Prahe"
+          }
+        ]
+      }
+    },
+    "history": {
+      "title": "História",
+      "intro": "Žižkovský tunel je jedinečný infraštruktúrny prvok, ktorý spája tri pražské štvrte pod horou Vítkov. Dnes slúži ako každodenný koridor pre chodcov a cyklistov — a veríme, že môže slúžiť aj ako prechod do sveta kultúry.",
+      "timeline": [
+        {
+          "year": "Vznik tunela",
+          "text": "Tunel bol postavený ako súčasť dopravnej infraštruktúry mesta a slúži tomuto účelu dodnes."
+        },
+        {
+          "year": "2025",
+          "text": "Vznik Spolku žižkovského tunela. Skupina vizionárov sa rozhodla premeniť tunel na galériu svetového formátu."
+        },
+        {
+          "year": "Plán",
+          "text": "Desaťročný plán zahŕňa tri diela ročne od českých a zahraničných umelcov. Každé dielo je navrhnuté priamo pre priestor tunela."
+        },
+        {
+          "year": "2027",
+          "text": "Inštalácia prvých troch umeleckých diel. Tunel sa otvorí verejnosti ako živá galéria — úvodná kapitola kultúrnej premeny priestoru."
+        },
+        {
+          "year": "2030",
+          "text": "Druhá vlna troch inštalácií rozširuje tematický záber a zapája medzinárodných umelcov. Tunel sa etabluje ako uznávané kultúrne miesto na mape Prahy."
+        },
+        {
+          "year": "2033",
+          "text": "Tretia etapa uzatvára prvú dekádu projektu deviatimi trvalými dielami. Tunel sa stáva ikonickým miestom na križovatke verejného priestoru a súčasného umenia."
+        }
+      ]
+    },
+    "gallery": {
+      "title": "Galéria",
+      "subtitle": "Dokumentácia priestoru a jeho premien"
+    },
+    "findUs": {
+      "title": "Ako nás nájdete",
+      "address": "Žižkovský tunel\nPraha 3 — Žižkov / Karlín / Holešovice",
+      "directions": "Vstup od Žižkova: ulica Seifertova, v blízkosti Náměstí Winstona Churchilla.\nVstup od Karlína: ulica Šaldova.\nMHD: Metro B Florenc, električka Tachovské náměstí alebo Lipanská.",
+      "mapNote": "Tunel je denne prístupný pre chodcov a cyklistov."
+    },
+    "contact": {
+      "title": "Kontakt",
+      "subtitle": "Máte záujem o spoluprácu, partnerstvo alebo mediálne otázky? Napíšte nám.",
+      "namePlaceholder": "Celé meno",
+      "emailPlaceholder": "E-mailová adresa",
+      "messagePlaceholder": "Vaša správa...",
+      "sendButton": "Odoslať správu",
+      "successMessage": "Ďakujeme! Vaša správa bola odoslaná. Čoskoro sa vám ozveme.",
+      "errorMessage": "Ospravedlňujeme sa, správu sa nepodarilo odoslať. Skúste to prosím znova.",
+      "nameLabel": "Meno",
+      "emailLabel": "E-mail",
+      "messageLabel": "Správa"
+    }
+  },
+  "footer": {
+    "copyright": "© {year} Spolok žižkovského tunela. Všetky práva vyhradené.",
+    "nav": {
+      "about": "O nás",
+      "history": "História",
+      "gallery": "Galéria",
+      "findUs": "Ako nás nájdete",
+      "contact": "Kontakt"
+    }
+  },
+  "meta": {
+    "title": "Žižkovský tunel — Spolok",
+    "description": "Premieňame žižkovský tunel na galériu svetového umenia. Projekt spájajúci Žižkov, Karlín a Holešovice — kultúrna os Prahy."
+  },
+  "accessibility": {
+    "openMenu": "Otvoriť menu",
+    "closeMenu": "Zatvoriť menu",
+    "nextImage": "Ďalší obrázok",
+    "prevImage": "Predchádzajúci obrázok",
+    "instagramLink": "Navštíviť Instagram",
+    "facebookLink": "Navštíviť Facebook",
+    "languageSwitcher": "Prepnúť jazyk"
+  }
+}

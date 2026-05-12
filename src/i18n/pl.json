@@ -1,0 +1,115 @@
+{
+  "nav": {
+    "about": "O nas",
+    "history": "Historia",
+    "gallery": "Galeria",
+    "findUs": "Jak do nas dotrzeć",
+    "contact": "Kontakt"
+  },
+  "header": {
+    "title": "Tunel Žižkov"
+  },
+  "sections": {
+    "about": {
+      "title": "O nas",
+      "body": "Stowarzyszenie Tunelu Žižkov to niezależna inicjatywa założona w 2025 roku przez wybitne osobistości ze świata architektury, sztuki i kultury. Naszym celem jest przekształcenie Tunelu Žižkov w tętniącą życiem galerię sztuki współczesnej i otwarty przestrzeń publiczną.\n\nProjekt łączy dzielnice Žižkov, Karlín i Holešovice, tworząc kulturową oś przez serce Pragi. Inspirujemy się światowej sławy projektami, takimi jak High Line w Nowym Jorku.\n\nStowarzyszenie opiera się na zasadach otwartości, współpracy i długoterminowej troski o przestrzeń publiczną.",
+      "members": {
+        "title": "Założyciele",
+        "list": [
+          {
+            "name": "Martin Wichterle",
+            "role": "Przemysłowiec, właściciel grupy Wikov oraz hut szkła Bomma i Rückl"
+          },
+          {
+            "name": "Jiří Řezák",
+            "role": "Architekt i właściciel studia QARTA Architektura"
+          },
+          {
+            "name": "David Koller",
+            "role": "Muzyk, producent i inicjator kulturalny"
+          },
+          {
+            "name": "Jiří Fajt",
+            "role": "Historyk sztuki i dyrektor artystyczny, były dyrektor generalny Galerii Narodowej w Pradze"
+          }
+        ]
+      }
+    },
+    "history": {
+      "title": "Historia",
+      "intro": "Tunel Žižkov to wyjątkowy element infrastruktury łączący trzy praskie dzielnice pod wzgórzem Vítkov. Dziś służy jako codzienny korytarz dla pieszych i rowerzystów — i wierzymy, że może też być przejściem do świata kultury.",
+      "timeline": [
+        {
+          "year": "Początki",
+          "text": "Tunel został zbudowany jako część miejskiej infrastruktury transportowej i służy temu celowi do dziś."
+        },
+        {
+          "year": "2025",
+          "text": "Założenie Stowarzyszenia Tunelu Žižkov. Grupa wizjonerów postanawia przekształcić tunel w galerię o światowym znaczeniu."
+        },
+        {
+          "year": "Plan",
+          "text": "Dziesięcioletni plan zakłada trzy instalacje rocznie autorstwa czeskich i międzynarodowych artystów. Każde dzieło jest projektowane specjalnie dla przestrzeni tunelu."
+        },
+        {
+          "year": "2027",
+          "text": "Instalacja pierwszych trzech dzieł sztuki. Tunel otwiera się dla publiczności jako żywa galeria — inauguracja kulturowej transformacji przestrzeni."
+        },
+        {
+          "year": "2030",
+          "text": "Druga fala trzech instalacji poszerza zakres tematyczny i angażuje artystów międzynarodowych. Tunel ustala się jako uznane miejsce kultury na mapie Pragi."
+        },
+        {
+          "year": "2033",
+          "text": "Trzecia faza zamyka pierwszą dekadę projektu dziewięcioma trwałymi dziełami. Tunel staje się ikonicznym miejscem na skrzyżowaniu przestrzeni publicznej i sztuki współczesnej."
+        }
+      ]
+    },
+    "gallery": {
+      "title": "Galeria",
+      "subtitle": "Dokumentacja przestrzeni i jej przemian"
+    },
+    "findUs": {
+      "title": "Jak do nas dotrzeć",
+      "address": "Tunel Žižkov\nPraga 3 — Žižkov / Karlín / Holešovice",
+      "directions": "Wejście od strony Žižkova: ulica Seifertova, w pobliżu Náměstí Winstona Churchilla.\nWejście od strony Karlína: ulica Šaldova.\nKomunikacja miejska: metro B Florenc, tramwaj Tachovské náměstí lub Lipanská.",
+      "mapNote": "Tunel jest otwarty codziennie dla pieszych i rowerzystów."
+    },
+    "contact": {
+      "title": "Kontakt",
+      "subtitle": "Zainteresowany współpracą, partnerstwem lub zapytaniami medialnymi? Napisz do nas.",
+      "namePlaceholder": "Imię i nazwisko",
+      "emailPlaceholder": "Adres e-mail",
+      "messagePlaceholder": "Twoja wiadomość...",
+      "sendButton": "Wyślij wiadomość",
+      "successMessage": "Dziękujemy! Twoja wiadomość została wysłana. Odezwiemy się wkrótce.",
+      "errorMessage": "Przepraszamy, nie udało się wysłać wiadomości. Spróbuj ponownie.",
+      "nameLabel": "Imię",
+      "emailLabel": "E-mail",
+      "messageLabel": "Wiadomość"
+    }
+  },
+  "footer": {
+    "copyright": "© {year} Stowarzyszenie Tunelu Žižkov. Wszelkie prawa zastrzeżone.",
+    "nav": {
+      "about": "O nas",
+      "history": "Historia",
+      "gallery": "Galeria",
+      "findUs": "Jak do nas dotrzeć",
+      "contact": "Kontakt"
+    }
+  },
+  "meta": {
+    "title": "Tunel Žižkov — Stowarzyszenie",
+    "description": "Przekształcamy Tunel Žižkov w galerię sztuki o światowym znaczeniu. Projekt łączący Žižkov, Karlín i Holešovice — kulturowa oś Pragi."
+  },
+  "accessibility": {
+    "openMenu": "Otwórz menu",
+    "closeMenu": "Zamknij menu",
+    "nextImage": "Następny obraz",
+    "prevImage": "Poprzedni obraz",
+    "instagramLink": "Odwiedź Instagram",
+    "facebookLink": "Odwiedź Facebook",
+    "languageSwitcher": "Zmień język"
+  }
+}

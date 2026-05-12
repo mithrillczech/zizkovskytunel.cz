@@ -1,0 +1,115 @@
+{
+  "nav": {
+    "about": "Über uns",
+    "history": "Geschichte",
+    "gallery": "Galerie",
+    "findUs": "Anreise",
+    "contact": "Kontakt"
+  },
+  "header": {
+    "title": "Žižkov Tunnel"
+  },
+  "sections": {
+    "about": {
+      "title": "Über uns",
+      "body": "Der Verein Žižkov Tunnel ist eine unabhängige Initiative, die 2025 von führenden Persönlichkeiten aus den Bereichen Architektur, Kunst und Kultur gegründet wurde. Unser Ziel ist es, den Žižkov Tunnel in eine lebendige Galerie zeitgenössischer Kunst und einen offenen öffentlichen Raum zu verwandeln.\n\nDas Projekt verbindet die Stadtteile Žižkov, Karlín und Holešovice und bildet eine kulturelle Achse durch das Herz Prags. Wir lassen uns von weltbekannten Projekten wie der High Line in New York City inspirieren.\n\nDer Verein baut auf den Grundsätzen der Offenheit, der Zusammenarbeit und der langfristigen Pflege des öffentlichen Raums.",
+      "members": {
+        "title": "Gründungsmitglieder",
+        "list": [
+          {
+            "name": "Martin Wichterle",
+            "role": "Industrieller, Eigentümer der Wikov-Gruppe sowie der Glashütten Bomma und Rückl"
+          },
+          {
+            "name": "Jiří Řezák",
+            "role": "Architekt und Inhaber des Studios QARTA Architektura"
+          },
+          {
+            "name": "David Koller",
+            "role": "Musiker, Produzent und Kulturinitiator"
+          },
+          {
+            "name": "Jiří Fajt",
+            "role": "Kunsthistoriker und künstlerischer Direktor, ehemaliger Generaldirektor der Nationalgalerie Prag"
+          }
+        ]
+      }
+    },
+    "history": {
+      "title": "Geschichte",
+      "intro": "Der Žižkov Tunnel ist ein einzigartiges Infrastrukturelement, das drei Prager Stadtteile unter dem Vítkov-Hügel verbindet. Heute dient er als täglicher Korridor für Fußgänger und Radfahrer — und wir sind überzeugt, dass er auch als Durchgang in die Welt der Kultur dienen kann.",
+      "timeline": [
+        {
+          "year": "Entstehung",
+          "text": "Der Tunnel wurde als Teil der städtischen Verkehrsinfrastruktur erbaut und erfüllt diesen Zweck bis heute."
+        },
+        {
+          "year": "2025",
+          "text": "Gründung des Vereins Žižkov Tunnel. Eine Gruppe von Visionären beschließt, den Tunnel in eine international bedeutsame Galerie zu verwandeln."
+        },
+        {
+          "year": "Der Plan",
+          "text": "Ein Zehnjahresplan sieht drei Installationen pro Jahr von tschechischen und internationalen Künstlern vor. Jedes Werk wird speziell für den Tunnelraum konzipiert."
+        },
+        {
+          "year": "2027",
+          "text": "Die ersten drei Kunstwerke werden installiert. Der Tunnel öffnet als lebendige Galerie für die Öffentlichkeit — das Eröffnungskapitel einer kulturellen Transformation."
+        },
+        {
+          "year": "2030",
+          "text": "Eine zweite Welle von drei Installationen erweitert den thematischen Horizont und bezieht internationale Künstler ein. Der Tunnel etabliert sich als anerkannter Kulturort auf der Landkarte Prags."
+        },
+        {
+          "year": "2033",
+          "text": "Die dritte Phase schließt das erste Jahrzehnt mit neun dauerhaften Werken ab. Der Tunnel wird zu einem ikonischen Ort an der Schnittstelle von öffentlichem Raum und zeitgenössischer Kunst."
+        }
+      ]
+    },
+    "gallery": {
+      "title": "Galerie",
+      "subtitle": "Dokumentation des Raums und seiner Wandlungen"
+    },
+    "findUs": {
+      "title": "Anreise",
+      "address": "Žižkov Tunnel\nPrag 3 — Žižkov / Karlín / Holešovice",
+      "directions": "Eingang von Žižkov: Seifertova-Straße, in der Nähe des Náměstí Winstona Churchilla.\nEingang von Karlín: Šaldova-Straße.\nÖPNV: U-Bahn B Florenc, Straßenbahn Tachovské náměstí oder Lipanská.",
+      "mapNote": "Der Tunnel ist täglich für Fußgänger und Radfahrer geöffnet."
+    },
+    "contact": {
+      "title": "Kontakt",
+      "subtitle": "Interesse an Zusammenarbeit, Partnerschaft oder Medienanfragen? Schreiben Sie uns.",
+      "namePlaceholder": "Vollständiger Name",
+      "emailPlaceholder": "E-Mail-Adresse",
+      "messagePlaceholder": "Ihre Nachricht...",
+      "sendButton": "Nachricht senden",
+      "successMessage": "Vielen Dank! Ihre Nachricht wurde gesendet. Wir melden uns in Kürze.",
+      "errorMessage": "Entschuldigung, die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",
+      "nameLabel": "Name",
+      "emailLabel": "E-Mail",
+      "messageLabel": "Nachricht"
+    }
+  },
+  "footer": {
+    "copyright": "© {year} Verein Žižkov Tunnel. Alle Rechte vorbehalten.",
+    "nav": {
+      "about": "Über uns",
+      "history": "Geschichte",
+      "gallery": "Galerie",
+      "findUs": "Anreise",
+      "contact": "Kontakt"
+    }
+  },
+  "meta": {
+    "title": "Žižkov Tunnel — Verein",
+    "description": "Wir verwandeln den Žižkov Tunnel in eine Galerie von Weltrang. Ein Projekt, das Žižkov, Karlín und Holešovice verbindet — die kulturelle Achse Prags."
+  },
+  "accessibility": {
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "nextImage": "Nächstes Bild",
+    "prevImage": "Vorheriges Bild",
+    "instagramLink": "Instagram besuchen",
+    "facebookLink": "Facebook besuchen",
+    "languageSwitcher": "Sprache wechseln"
+  }
+}
