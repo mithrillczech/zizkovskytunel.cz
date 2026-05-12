@@ -184,12 +184,12 @@ function GalleryGrid({ images }: { images: GalleryImage[] }) {
         >
           {/* Close button */}
           <button
-            className="absolute top-4 right-4 text-text-muted hover:text-text-primary"
+            className="absolute top-4 right-4 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-surface-raised/80 backdrop-blur-sm border border-white/10 text-text-primary hover:bg-accent hover:text-bg hover:border-accent transition-colors duration-150"
             onClick={() => setLightbox(null)}
             aria-label="Close"
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-              <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+              <line x1="12" y1="2" x2="2" y2="12"/><line x1="2" y1="2" x2="12" y2="12"/>
             </svg>
           </button>
 

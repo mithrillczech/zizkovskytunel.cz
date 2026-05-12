@@ -20,31 +20,25 @@ export function HeroSection({
   const isFirstMount = useRef(true);
   const ambientRef = useRef<ReturnType<typeof animate> | null>(null);
 
-  // Idle ambient breathing — only when no section is active
-  useEffect(() => {
-    if (typeof window === "undefined") return;
+  // Idle ambient breathing — runs always (idle + while section is shown)
+  // Started on mount; stopped during transitions and restarted after them
+  const startAmbient = () => {
     const el = imgRef.current;
     if (!el) return;
+    if (typeof window !== "undefined" &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    ambientRef.current?.stop();
+    ambientRef.current = animate(
+      el,
+      { scale: [1, 1.04, 1] },
+      { duration: 8, ease: "easeInOut", repeat: Infinity }
+    );
+  };
 
-    const prefersReduced =
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReduced) return;
-
-    if (activeSection === "none") {
-      ambientRef.current = animate(
-        el,
-        { scale: [1, 1.04, 1] },
-        { duration: 8, ease: "easeInOut", repeat: Infinity }
-      );
-    } else {
-      ambientRef.current?.stop();
-      ambientRef.current = null;
-    }
-
-    return () => {
-      ambientRef.current?.stop();
-    };
-  }, [activeSection]);
+  useEffect(() => {
+    startAmbient();
+    return () => { ambientRef.current?.stop(); };
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Tunnel transition on section change
   useEffect(() => {
@@ -62,7 +56,7 @@ export function HeroSection({
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     if (prefersReduced) {
-      setTimeout(onTransitionMidpoint, 0);
+      setTimeout(() => { onTransitionMidpoint(); startAmbient(); }, 0);
       return;
     }
 
@@ -72,16 +66,17 @@ export function HeroSection({
     // Phase 1 — accelerating rush into the tunnel
     animate(
       el,
-      { scale: 5, filter: "blur(20px)" },
-      { duration: 0.8, ease: [0.3, 0, 0.9, 1] }
+      { scale: 7.5, filter: "blur(20px)" },
+      { duration: 0.55, ease: [0.15, 0, 1, 1] }
     ).then(() => {
       // Hard cut — no zoom-out tween, instant return to original
       animate(el, { scale: 1, filter: "blur(0px)" }, { duration: 0 });
 
-      // Swap section content while darkness covers the screen
-      onTransitionMidpoint();
-
-      if (!overlay) return;
+      if (!overlay) {
+        onTransitionMidpoint();
+        startAmbient();
+        return;
+      }
 
       // Cover the screen instantly with the black overlay at full size
       overlay.style.opacity = "1";
@@ -95,6 +90,10 @@ export function HeroSection({
         { duration: 0.9, ease: [0, 0, 0.4, 1] }
       ).then(() => {
         overlay.style.opacity = "0";
+        // Content box appears only after the full darkness reveal is complete
+        onTransitionMidpoint();
+        // Resume ambient pulsing now that the transition is fully done
+        startAmbient();
       });
     });
   // eslint-disable-next-line react-hooks/exhaustive-deps
