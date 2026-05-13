@@ -64,13 +64,13 @@ export function HeroSection({
 
     ambientRef.current?.stop();
     ambientRef.current = null;
-    // Snap ambient scale back to neutral so every transition starts from the same visual state.
-    // Without this the first click zooms from wherever the breathing cycle happened to pause,
-    // making it look different from subsequent transitions.
-    animate(el, { scale: 1 }, { duration: 0 });
 
-    // Phase 1 — accelerating rush into the tunnel (3D perspective depth)
-    // Peripheral vignette darkens simultaneously to sell the speed sensation
+    // Phase 1 — accelerating rush into the tunnel (3D perspective depth).
+    // scale: [1, 1] snaps the ambient scale back to neutral at the very first frame
+    // so every transition starts from the same visual baseline, regardless of where
+    // the breathing cycle was paused. Using keyframes in a single call avoids the
+    // timing/cancellation issue that a separate animate({ scale:1 }, { duration:0 })
+    // would cause on Framer Motion's first animation of this element.
     const RUSH_DURATION = 0.41;
     const RUSH_EASE: [number, number, number, number] = [0.15, 0, 1, 1];
 
@@ -78,7 +78,11 @@ export function HeroSection({
       animate(vignette, { opacity: 1 }, { duration: RUSH_DURATION, ease: RUSH_EASE });
     }
 
-    animate(el, { z: 460, filter: "blur(20px)" }, { duration: RUSH_DURATION, ease: RUSH_EASE })
+    animate(
+      el,
+      { scale: [1, 1], z: [0, 460], filter: ["blur(0px)", "blur(20px)"] },
+      { duration: RUSH_DURATION, ease: RUSH_EASE }
+    )
     .then(() => {
       // Hard cut — instant return to origin depth, clear peripheral vignette.
       // Also reset scale so the darkness reveal always shows the image at 1:1 scale.
