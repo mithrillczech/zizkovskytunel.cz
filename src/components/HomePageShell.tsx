@@ -75,7 +75,6 @@ function HomePageInner({ galleryImages }: HomePageShellProps) {
           </SectionPanel>
         </HeroSection>
 
-        <div className="h-screen" aria-hidden="true" />
         <Footer onSectionChange={handleSectionChange} />
       </div>
 
@@ -104,7 +103,7 @@ function HomePageInner({ galleryImages }: HomePageShellProps) {
           </div>
         </div>
 
-        <main className="bg-bg">
+        <main className="bg-bg pb-52">
           <section id="section-about" className="py-14 px-6 border-b border-white/5">
             <AboutSection />
           </section>

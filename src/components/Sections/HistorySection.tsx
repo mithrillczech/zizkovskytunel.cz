@@ -3,11 +3,7 @@ import { useTranslations } from "next-intl";
 export function HistorySection() {
   const t = useTranslations("sections.history");
 
-  const timeline = [
-    { year: t("timeline.0.year"), text: t("timeline.0.text") },
-    { year: t("timeline.1.year"), text: t("timeline.1.text") },
-    { year: t("timeline.2.year"), text: t("timeline.2.text") },
-  ];
+  const timeline = t.raw("timeline") as { year: string; text: string }[];
 
   return (
     <div className="p-8 lg:p-12">

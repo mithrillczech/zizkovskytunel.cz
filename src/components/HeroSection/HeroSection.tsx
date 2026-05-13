@@ -8,22 +8,15 @@ interface HeroSectionProps {
   children?: React.ReactNode;
 }
 
-// Matches the exit sequence in SectionPanel — full flicker cycle over ~0.9s
-// (exit 0.45s + enter 0.45s) so the background and content die/revive together.
+// Matches the exit sequence in SectionPanel — full flicker cycle over ~0.45s
 const FLICKER_BRIGHTNESS = [
   "brightness(1)",
-  "brightness(2.2)",
-  "brightness(0.3)",
-  "brightness(1.6)",
-  "brightness(0.15)",
-  "brightness(0.9)",
-  "brightness(0.05)",
-  "brightness(0)",
-  "brightness(2.8)",
-  "brightness(0.25)",
-  "brightness(1.6)",
-  "brightness(0.55)",
-  "brightness(1.2)",
+  "brightness(1.5)",
+  "brightness(0.5)",
+  "brightness(1.3)",
+  "brightness(0.4)",
+  "brightness(1.1)",
+  "brightness(0.6)",
   "brightness(1)",
 ];
 
@@ -67,7 +60,7 @@ export function HeroSection({ flickerKey, children }: HeroSectionProps) {
     animate(
       el,
       { filter: FLICKER_BRIGHTNESS },
-      { duration: 0.9, ease: "linear" }
+      { duration: 0.45, ease: "linear" }
     ).then(() => {
       animate(el, { filter: "brightness(1)" }, { duration: 0 });
       startAmbient();

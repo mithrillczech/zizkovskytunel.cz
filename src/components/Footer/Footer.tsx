@@ -39,18 +39,18 @@ export function Footer({ onSectionChange }: FooterProps) {
   const copyright = t("copyright").replace("{year}", String(year));
 
   return (
-    <footer className="relative z-30 bg-footer-bg text-footer-text">
+    <footer className="fixed bottom-0 left-0 right-0 z-40 bg-footer-bg text-footer-text">
       <div className="max-w-6xl mx-auto px-6 lg:px-16 py-14">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
 
           {/* Nav links */}
           <nav aria-label="Footer navigation">
-            <ul className="flex flex-col sm:flex-row flex-wrap gap-x-8 gap-y-3" role="list">
+            <ul className="flex flex-col gap-y-3" role="list">
               {NAV_ITEMS.map((item) => (
                 <li key={item.id}>
                   <button
                     onClick={() => onSectionChange?.(item.id as SectionId)}
-                    className="font-sans text-xs tracking-widest uppercase text-white hover:opacity-60 transition-opacity duration-150"
+                    className="font-sans text-xs tracking-widest uppercase text-white/55 hover:text-white/90 transition-colors duration-150"
                   >
                     {t(`nav.${item.labelKey}`)}
                   </button>
