@@ -17,6 +17,7 @@ const LOCALES = [
 
 interface LanguageSwitcherProps {
   activeSection?: SectionId;
+  large?: boolean;
 }
 
 function ChevronDown({ isOpen }: { isOpen: boolean }) {
@@ -41,7 +42,7 @@ function ChevronDown({ isOpen }: { isOpen: boolean }) {
   );
 }
 
-export function LanguageSwitcher({ activeSection }: LanguageSwitcherProps) {
+export function LanguageSwitcher({ activeSection, large }: LanguageSwitcherProps) {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
@@ -93,8 +94,9 @@ export function LanguageSwitcher({ activeSection }: LanguageSwitcherProps) {
         disabled={isPending}
         className={`
           flex items-center gap-1 px-2 py-1
-          font-sans text-xs tracking-widest uppercase
+          font-sans tracking-widest uppercase
           transition-colors duration-150
+          ${large ? "text-xl" : "text-xs"}
           ${isOpen ? "text-accent" : "text-text-muted hover:text-text-primary"}
         `}
         aria-haspopup="listbox"

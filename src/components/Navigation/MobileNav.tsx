@@ -102,8 +102,11 @@ export function MobileNav({ activeSection, onSectionChange }: MobileNavProps) {
                   );
                 })}
               </ul>
-              <div className="flex justify-center">
-                <LanguageSwitcher activeSection={activeSection} />
+              <div className="flex justify-center items-center gap-4">
+                <span className="font-sans text-xl tracking-widest uppercase text-text-muted">
+                  Language
+                </span>
+                <LanguageSwitcher activeSection={activeSection} large />
               </div>
             </nav>
           </motion.div>

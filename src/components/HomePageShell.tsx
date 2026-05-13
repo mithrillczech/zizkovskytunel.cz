@@ -94,27 +94,29 @@ function HomePageInner({ galleryImages }: HomePageShellProps) {
             }}
             aria-hidden="true"
           />
+          {/* Bottom fade to background */}
+          <div className="absolute bottom-0 left-0 right-0 h-[10%] bg-gradient-to-t from-bg to-transparent" aria-hidden="true" />
         </div>
 
-        <main className="bg-bg pb-52">
-          <section id="section-about" className="py-14 px-6 border-b border-white/5">
+        <main className="bg-bg pb-28">
+          <section id="section-about" className="py-7 px-6 border-b border-white/5">
             <AboutSection />
           </section>
-          <section id="section-history" className="py-14 px-6 border-b border-white/5">
+          <section id="section-history" className="py-7 px-6 border-b border-white/5">
             <HistorySection />
           </section>
-          <section id="section-gallery" className="py-14 border-b border-white/5">
-            <div className="px-6 mb-6">
+          <section id="section-gallery" className="py-7 border-b border-white/5">
+            <div className="px-6 mb-3">
               <GallerySection variant="carousel" images={galleryImages} />
             </div>
           </section>
-          <section id="section-findus" className="py-14 px-6 border-b border-white/5">
+          <section id="section-findus" className="py-7 px-6 border-b border-white/5">
             <FindUsSection />
           </section>
-          <section id="section-media" className="py-14 px-6 border-b border-white/5">
+          <section id="section-media" className="py-7 px-6 border-b border-white/5">
             <MediaSection />
           </section>
-          <section id="section-contact" className="py-14 px-6">
+          <section id="section-contact" className="py-7 px-6">
             <ContactSection />
           </section>
         </main>

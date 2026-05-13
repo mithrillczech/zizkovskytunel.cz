@@ -43,8 +43,8 @@ export function HeroSection({ children }: HeroSectionProps) {
           backgroundColor: "#1a1a1a",
         }}
       />
-      {/* Permanent dark vignette for readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-bg/60 via-transparent to-bg/80" />
+      {/* Bottom fade to background */}
+      <div className="absolute bottom-0 left-0 right-0 h-[10%] bg-gradient-to-t from-bg to-transparent" />
       {children}
     </div>
   );

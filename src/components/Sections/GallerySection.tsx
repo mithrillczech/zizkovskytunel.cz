@@ -142,39 +142,74 @@ function GalleryCarousel({ images }: { images: GalleryImage[] }) {
   );
 }
 
+const PAGE_SIZE = 6;
+
 // ─── Desktop grid + lightbox ──────────────────────────────────────────────────
 
 function GalleryGrid({ images }: { images: GalleryImage[] }) {
   const [lightbox, setLightbox] = useState<number | null>(null);
+  const [page, setPage] = useState(0);
   const t = useTranslations("accessibility");
 
   if (images.length === 0) return null;
 
+  const totalPages = Math.ceil(images.length / PAGE_SIZE);
+  const pageImages = images.slice(page * PAGE_SIZE, page * PAGE_SIZE + PAGE_SIZE);
+
   return (
     <>
       <div className="grid grid-cols-3 gap-3">
-        {images.map((img, i) => (
-          <button
-            key={i}
-            onClick={() => setLightbox(i)}
-            className="group relative overflow-hidden focus-visible:ring-2 focus-visible:ring-accent"
-            style={{ aspectRatio: "4/3" }}
-          >
-            <Image
-              src={img.src}
-              alt={img.alt}
-              fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-              sizes="(max-width: 1280px) 33vw, 400px"
-            />
-            <div className="absolute inset-0 bg-bg/0 group-hover:bg-bg/40 transition-colors duration-300 flex items-end p-3 opacity-0 group-hover:opacity-100">
-              <span className="font-sans text-xs text-text-primary tracking-wide border-b border-accent pb-0.5">
-                {img.alt}
-              </span>
-            </div>
-          </button>
-        ))}
+        {pageImages.map((img, i) => {
+          const globalIndex = page * PAGE_SIZE + i;
+          return (
+            <button
+              key={globalIndex}
+              onClick={() => setLightbox(globalIndex)}
+              className="group relative overflow-hidden focus-visible:ring-2 focus-visible:ring-accent"
+              style={{ aspectRatio: "4/3" }}
+            >
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                sizes="(max-width: 1280px) 33vw, 400px"
+              />
+              <div className="absolute inset-0 bg-bg/0 group-hover:bg-bg/40 transition-colors duration-300 flex items-end p-3 opacity-0 group-hover:opacity-100">
+                <span className="font-sans text-xs text-text-primary tracking-wide border-b border-accent pb-0.5">
+                  {img.alt}
+                </span>
+              </div>
+            </button>
+          );
+        })}
       </div>
+
+      {/* Pagination arrows */}
+      {totalPages > 1 && (
+        <div className="flex items-center justify-center gap-6 mt-5">
+          <button
+            onClick={() => setPage((p) => Math.max(0, p - 1))}
+            disabled={page === 0}
+            className="w-9 h-9 flex items-center justify-center border border-white/15 text-text-muted hover:text-text-primary hover:border-white/40 disabled:opacity-20 disabled:cursor-not-allowed transition-colors duration-150"
+            aria-label={t("prevImage")}
+          >
+            <ChevronLeft />
+          </button>
+          <span className="font-sans text-xs text-text-muted tracking-widest">
+            {page + 1} / {totalPages}
+          </span>
+          <button
+            onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}
+            disabled={page === totalPages - 1}
+            className="w-9 h-9 flex items-center justify-center border border-white/15 text-text-muted hover:text-text-primary hover:border-white/40 disabled:opacity-20 disabled:cursor-not-allowed transition-colors duration-150"
+            aria-label={t("nextImage")}
+          >
+            <ChevronRight />
+          </button>
+        </div>
+      )}
+
 
       {/* Lightbox */}
       {lightbox !== null && (
