@@ -95,25 +95,34 @@ export function HeroSection({
         return;
       }
 
-      // Reset overlay through Framer Motion so its internal cache is always in sync.
-      // Direct .style assignments are invisible to FM and cause it to skip subsequent
-      // animations (it sees no change from its cached value).
-      animate(overlay, { opacity: 1, clipPath: "circle(150% at 50% 50%)", filter: "blur(20px)" }, { duration: 0 });
+      // Phase 2 — darkness collapses from edges toward center via CSS transition.
+      // FM's imperative animate() batches the duration:0 reset and the subsequent
+      // timed animation into the same frame, so FM reads circle(0%) as the start
+      // point and the animation is invisible. Using direct DOM + void reflow +
+      // CSS transition guarantees the browser commits circle(150%) before animating.
+      overlay.style.transition = "none";
+      overlay.style.opacity = "1";
+      overlay.style.clipPath = "circle(150% at 50% 50%)";
+      overlay.style.filter = "blur(20px)";
 
-      // Phase 2 — darkness collapses from edges toward the center.
-      // ease-in-out: outer edges collapse noticeably at the start, then slow at center.
-      // Reduced blur (20px) keeps the gradient soft but visible across the full viewport.
-      animate(
-        overlay,
-        { clipPath: "circle(0% at 50% 50%)" },
-        { duration: 1.4, ease: [0.4, 0, 0.6, 1] }
-      ).then(() => {
-        animate(overlay, { opacity: 0, filter: "blur(0px)" }, { duration: 0 });
+      void overlay.offsetHeight; // force reflow — commits styles above to the browser
+
+      overlay.style.transition = "clip-path 1.4s cubic-bezier(0.4, 0, 0.6, 1)";
+      overlay.style.clipPath = "circle(0% at 50% 50%)";
+
+      const done = () => {
+        overlay.removeEventListener("transitionend", done);
+        overlay.style.transition = "none";
+        overlay.style.opacity = "0";
+        overlay.style.filter = "blur(0px)";
+        // Re-sync FM's internal cache so the next transition's reset is correct.
+        animate(overlay, { opacity: 0, clipPath: "circle(0% at 50% 50%)", filter: "blur(0px)" }, { duration: 0 });
         // Content box appears only after the full darkness reveal is complete
         onTransitionMidpoint();
         // Resume ambient pulsing now that the transition is fully done
         startAmbient();
-      });
+      };
+      overlay.addEventListener("transitionend", done);
     });
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeSection]);
