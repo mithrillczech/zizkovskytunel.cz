@@ -8,15 +8,6 @@ interface SectionPanelProps {
   children: React.ReactNode;
 }
 
-// Total flicker duration in HeroSection
-const FLICKER_DURATION = 0.33;
-// How long the panel fades out (runs concurrently with the start of the flicker)
-const EXIT_DURATION = 0.15;
-// How long the panel fades in after the flicker ends
-const ENTER_DURATION = 0.22;
-// Delay before fade-in starts: flicker must finish, minus the exit time already elapsed
-const ENTER_DELAY = FLICKER_DURATION - EXIT_DURATION;
-
 export function SectionPanel({ section, children }: SectionPanelProps) {
   return (
     <div className="fixed inset-0 z-20 flex items-end lg:items-center justify-center pointer-events-none">
@@ -25,8 +16,8 @@ export function SectionPanel({ section, children }: SectionPanelProps) {
           <motion.div
             key={section}
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: { duration: ENTER_DURATION, delay: ENTER_DELAY, ease: "easeOut" } }}
-            exit={{ opacity: 0, transition: { duration: EXIT_DURATION, ease: "easeIn" } }}
+            animate={{ opacity: 1, transition: { duration: 0.25, ease: "easeOut" } }}
+            exit={{ opacity: 0, transition: { duration: 0.18, ease: "easeIn" } }}
             className="
               pointer-events-auto
               w-full max-w-4xl mx-4 lg:mx-auto

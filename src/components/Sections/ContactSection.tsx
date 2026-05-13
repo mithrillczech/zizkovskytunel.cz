@@ -13,6 +13,7 @@ export function ContactSection() {
     message: "",
   });
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [errorDetail, setErrorDetail] = useState<string>("");
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -24,7 +25,12 @@ export function ContactSection() {
     e.preventDefault();
     setStatus("submitting");
     const result = await submitContactForm(form);
-    setStatus(result.success ? "success" : "error");
+    if (result.success) {
+      setStatus("success");
+    } else {
+      setErrorDetail(result.error ?? "");
+      setStatus("error");
+    }
   }
 
   if (status === "success") {
@@ -103,9 +109,12 @@ export function ContactSection() {
 
         {/* Error message */}
         {status === "error" && (
-          <p className="lg:col-span-2 text-sm text-red-400 font-sans">
-            {t("errorMessage")}
-          </p>
+          <div className="lg:col-span-2 font-sans">
+            <p className="text-sm text-red-400">{t("errorMessage")}</p>
+            {errorDetail && (
+              <p className="text-xs text-red-400/70 mt-1 break-all">{errorDetail}</p>
+            )}
+          </div>
         )}
 
         {/* Submit */}
