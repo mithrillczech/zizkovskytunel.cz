@@ -27,10 +27,12 @@ function HomePageInner({ galleryImages }: HomePageShellProps) {
   const [section, setSection] = useState<SectionId>(
     (searchParams.get("section") ?? "none") as SectionId
   );
+  const [flickerKey, setFlickerKey] = useState(0);
 
   const handleSectionChange = useCallback(
     (next: SectionId) => {
       setSection(next);
+      setFlickerKey((k) => k + 1);
 
       const params = new URLSearchParams(searchParams.toString());
       if (next === "none") {
@@ -67,7 +69,7 @@ function HomePageInner({ galleryImages }: HomePageShellProps) {
           />
         </div>
 
-        <HeroSection>
+        <HeroSection flickerKey={flickerKey}>
           <SectionPanel section={section}>
             {renderSection()}
           </SectionPanel>
