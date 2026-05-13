@@ -10,19 +10,29 @@ interface HeroSectionProps {
   children?: React.ReactNode;
 }
 
+// Shared background style reused across main image + ghost trail divs
+const TUNNEL_BG: React.CSSProperties = {
+  backgroundImage: "url('/img/tunnel-hero.jpg')",
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+  backgroundColor: "#1a1a1a",
+};
+
 export function HeroSection({
   activeSection,
   onTransitionMidpoint,
   children,
 }: HeroSectionProps) {
-  const imgRef = useRef<HTMLDivElement>(null);
+  const imgRef    = useRef<HTMLDivElement>(null);
+  const ghost1Ref = useRef<HTMLDivElement>(null); // motion trail — reaches 2.8× scale
+  const ghost2Ref = useRef<HTMLDivElement>(null); // motion trail — reaches 5× scale
+  const flashRef  = useRef<HTMLDivElement>(null); // overexposure glow at zoom peak
   const vignetteRef = useRef<HTMLDivElement>(null);
-  const overlayRef = useRef<HTMLDivElement>(null);
+  const overlayRef  = useRef<HTMLDivElement>(null);
   const isFirstMount = useRef(true);
   const ambientRef = useRef<ReturnType<typeof animate> | null>(null);
 
-  // Idle ambient breathing — runs always (idle + while section is shown)
-  // Started on mount; stopped during transitions and restarted after them
   const startAmbient = () => {
     const el = imgRef.current;
     if (!el) return;
@@ -41,16 +51,18 @@ export function HeroSection({
     return () => { ambientRef.current?.stop(); };
   }, []);
 
-  // Tunnel transition on section change
   useEffect(() => {
     if (isFirstMount.current) {
       isFirstMount.current = false;
       return;
     }
 
-    const el = imgRef.current;
+    const el      = imgRef.current;
+    const ghost1  = ghost1Ref.current;
+    const ghost2  = ghost2Ref.current;
+    const flash   = flashRef.current;
     const vignette = vignetteRef.current;
-    const overlay = overlayRef.current;
+    const overlay  = overlayRef.current;
     if (!el) return;
 
     const prefersReduced =
@@ -65,28 +77,55 @@ export function HeroSection({
     ambientRef.current?.stop();
     ambientRef.current = null;
 
-    // Phase 1 — accelerating rush into the tunnel (3D perspective depth).
-    // scale: [1, 1] snaps the ambient scale back to neutral at the very first frame
-    // so every transition starts from the same visual baseline, regardless of where
-    // the breathing cycle was paused. Using keyframes in a single call avoids the
-    // timing/cancellation issue that a separate animate({ scale:1 }, { duration:0 })
-    // would cause on Framer Motion's first animation of this element.
+    // ── Phase 1 — light-speed rush ─────────────────────────────────────────
+    // scale: [1, 1] on the main image snaps ambient scale to neutral so every
+    // transition starts from the same visual baseline.
     const RUSH_DURATION = 0.41;
     const RUSH_EASE: [number, number, number, number] = [0.15, 0, 1, 1];
 
+    // Peripheral edge darkening
     if (vignette) {
       animate(vignette, { opacity: 1 }, { duration: RUSH_DURATION, ease: RUSH_EASE });
     }
 
+    // Ghost trail 1 — scales to 2.8× while fading out.
+    // Represents the tunnel image "half a beat behind" the main zoom, creating
+    // the first layer of radial smear (light-speed star-stretch approximation).
+    if (ghost1) {
+      animate(
+        ghost1,
+        { scale: [1, 2.8], filter: ["blur(0px)", "blur(12px)"], opacity: [0.55, 0] },
+        { duration: RUSH_DURATION, ease: RUSH_EASE }
+      );
+    }
+
+    // Ghost trail 2 — scales more aggressively to 5× with heavier blur.
+    // Outer smear layer — represents the fastest "light streaks" at the edge.
+    if (ghost2) {
+      animate(
+        ghost2,
+        { scale: [1, 5], filter: ["blur(0px)", "blur(22px)"], opacity: [0.3, 0] },
+        { duration: RUSH_DURATION, ease: RUSH_EASE }
+      );
+    }
+
+    // Overexposure flash — radial white glow that peaks at the moment of jump
+    if (flash) {
+      animate(flash, { opacity: [0, 0.65] }, { duration: RUSH_DURATION, ease: RUSH_EASE });
+    }
+
+    // Main image — perspective z-zoom with blur
     animate(
       el,
       { scale: [1, 1], z: [0, 460], filter: ["blur(0px)", "blur(20px)"] },
       { duration: RUSH_DURATION, ease: RUSH_EASE }
     )
     .then(() => {
-      // Hard cut — instant return to origin depth, clear peripheral vignette.
-      // Also reset scale so the darkness reveal always shows the image at 1:1 scale.
-      animate(el, { z: 0, filter: "blur(0px)", scale: 1 }, { duration: 0 });
+      // Hard cut — snap everything back to resting state
+      animate(el,     { z: 0, filter: "blur(0px)", scale: 1 }, { duration: 0 });
+      if (ghost1)  animate(ghost1,  { scale: 1, opacity: 0, filter: "blur(0px)" }, { duration: 0 });
+      if (ghost2)  animate(ghost2,  { scale: 1, opacity: 0, filter: "blur(0px)" }, { duration: 0 });
+      if (flash)   animate(flash,   { opacity: 0 }, { duration: 0 });
       if (vignette) animate(vignette, { opacity: 0 }, { duration: 0 });
 
       if (!overlay) {
@@ -95,38 +134,31 @@ export function HeroSection({
         return;
       }
 
-      // Phase 2 — darkness collapses from edges toward center via CSS transition.
-      // FM's imperative animate() batches the duration:0 reset and the subsequent
-      // timed animation into the same frame, so FM reads circle(0%) as the start
-      // point and the animation is invisible. Using direct DOM + void reflow +
-      // CSS transition guarantees the browser commits circle(150%) before animating.
-      // Commit the "full black" state in this tick, then start the collapse in the
-      // next animation frame. This avoids the synchronous layout forced by
-      // void offsetHeight (which caused a visible frozen-black pause) while still
-      // ensuring the browser sees circle(150%) as the transition's from-value.
+      // ── Phase 2 — darkness reveals from edges toward center ────────────────
+      // Uses direct DOM + requestAnimationFrame instead of FM's duration:0 +
+      // timed animate (which are batched in the same frame and the reveal starts
+      // from circle(0%) making it invisible).
       overlay.style.transition = "none";
-      overlay.style.opacity = "1";
-      overlay.style.clipPath = "circle(150% at 50% 50%)";
-      overlay.style.filter = "blur(120px)";
+      overlay.style.opacity    = "1";
+      overlay.style.clipPath   = "circle(150% at 50% 50%)";
+      overlay.style.filter     = "blur(250px)";
 
       requestAnimationFrame(() => {
         overlay.style.transition = "clip-path 1.4s cubic-bezier(0.4, 0, 0.6, 1)";
-        overlay.style.clipPath = "circle(0% at 50% 50%)";
+        overlay.style.clipPath   = "circle(0% at 50% 50%)";
 
         const done = () => {
           overlay.removeEventListener("transitionend", done);
-          // Fade out instead of hard-cut — the large blur leaves a visible dark
-          // blob at circle(0%) so an instant opacity:0 looks jarring.
+          // Smooth fade-out — the large blur leaves a visible dark blob at
+          // circle(0%) so an instant cut looks jarring
           overlay.style.transition = "opacity 0.35s ease";
-          overlay.style.opacity = "0";
+          overlay.style.opacity    = "0";
           setTimeout(() => {
             overlay.style.transition = "none";
-            overlay.style.filter = "blur(0px)";
-            // Re-sync FM's internal cache so the next transition's reset is correct.
+            overlay.style.filter     = "blur(0px)";
+            // Re-sync FM's internal cache for the next transition's reset
             animate(overlay, { opacity: 0, clipPath: "circle(0% at 50% 50%)", filter: "blur(0px)" }, { duration: 0 });
-            // Content box appears only after the full darkness has faded
             onTransitionMidpoint();
-            // Resume ambient pulsing now that the transition is fully done
             startAmbient();
           }, 350);
         };
@@ -138,20 +170,36 @@ export function HeroSection({
 
   return (
     <div className="fixed inset-0 z-0 overflow-hidden" style={{ perspective: "500px" }} aria-hidden="true">
-      {/* The tunnel image */}
+      {/* Main tunnel image — perspective z-zoom during transition */}
       <div
         ref={imgRef}
         className="absolute inset-0 will-change-transform"
-        style={{
-          backgroundImage: "url('/img/tunnel-hero.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          backgroundColor: "#1a1a1a",
-        }}
+        style={TUNNEL_BG}
       />
       {/* Permanent dark vignette for readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-bg/60 via-transparent to-bg/80" />
+
+      {/* Ghost trail 1 — scales 1→2.8× while fading, first smear layer */}
+      <div
+        ref={ghost1Ref}
+        className="absolute inset-0 will-change-transform pointer-events-none"
+        style={{ ...TUNNEL_BG, opacity: 0 }}
+      />
+      {/* Ghost trail 2 — scales 1→5× while fading, outer smear layer */}
+      <div
+        ref={ghost2Ref}
+        className="absolute inset-0 will-change-transform pointer-events-none"
+        style={{ ...TUNNEL_BG, opacity: 0 }}
+      />
+      {/* Overexposure flash — white radial glow at zoom peak */}
+      <div
+        ref={flashRef}
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          opacity: 0,
+          background: "radial-gradient(ellipse at center, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 40%, transparent 70%)",
+        }}
+      />
       {/* Peripheral speed vignette — edges darken during Phase 1 zoom */}
       <div
         ref={vignetteRef}
@@ -161,7 +209,7 @@ export function HeroSection({
           background: "radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.92) 100%)",
         }}
       />
-      {/* Tunnel reveal overlay — black circle that collapses from edges to center */}
+      {/* Tunnel reveal overlay — black circle collapses from edges to center */}
       <div
         ref={overlayRef}
         className="absolute inset-0 bg-black pointer-events-none"
