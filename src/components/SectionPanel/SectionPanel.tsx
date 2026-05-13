@@ -8,6 +8,38 @@ interface SectionPanelProps {
   children: React.ReactNode;
 }
 
+// Lightbulb / electricity flicker sequences.
+// Irregular keyframe pacing intentionally mimics an electrical flicker —
+// sharp brightness spikes followed by rapid drops, ending in darkness (exit)
+// or settling to full brightness (enter).
+
+const FLICKER_EXIT = {
+  opacity:    [1,   0.9, 1,   0.2, 0.85, 0.1, 0.6, 0],
+  filter: [
+    "brightness(1)",
+    "brightness(2.2)",
+    "brightness(0.3)",
+    "brightness(1.6)",
+    "brightness(0.15)",
+    "brightness(0.9)",
+    "brightness(0.05)",
+    "brightness(0)",
+  ],
+};
+
+const FLICKER_ENTER = {
+  opacity:    [0,   0.6, 0.1, 1,   0.45, 0.95, 1],
+  filter: [
+    "brightness(0)",
+    "brightness(2.8)",
+    "brightness(0.25)",
+    "brightness(1.6)",
+    "brightness(0.55)",
+    "brightness(1.2)",
+    "brightness(1)",
+  ],
+};
+
 export function SectionPanel({ section, children }: SectionPanelProps) {
   return (
     <div className="fixed inset-0 z-20 flex items-end lg:items-center justify-center pointer-events-none">
@@ -15,10 +47,10 @@ export function SectionPanel({ section, children }: SectionPanelProps) {
         {section !== "none" && (
           <motion.div
             key={section}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.15, ease: "easeInOut" }}
+            initial={{ opacity: 0, filter: "brightness(0)" }}
+            animate={FLICKER_ENTER}
+            exit={FLICKER_EXIT}
+            transition={{ duration: 0.45, ease: "linear" }}
             className="
               pointer-events-auto
               w-full max-w-4xl mx-4 lg:mx-auto
