@@ -27,7 +27,7 @@ export function HeroSection({
   const imgRef    = useRef<HTMLDivElement>(null);
   const ghost1Ref = useRef<HTMLDivElement>(null); // motion trail — reaches 2.8× scale
   const ghost2Ref = useRef<HTMLDivElement>(null); // motion trail — reaches 5× scale
-  const flashRef  = useRef<HTMLDivElement>(null); // overexposure glow at zoom peak
+  const flashRef  = useRef<HTMLDivElement>(null);
   const vignetteRef = useRef<HTMLDivElement>(null);
   const overlayRef  = useRef<HTMLDivElement>(null);
   const isFirstMount = useRef(true);
@@ -60,7 +60,6 @@ export function HeroSection({
     const el      = imgRef.current;
     const ghost1  = ghost1Ref.current;
     const ghost2  = ghost2Ref.current;
-    const flash   = flashRef.current;
     const vignette = vignetteRef.current;
     const overlay  = overlayRef.current;
     if (!el) return;
@@ -109,11 +108,6 @@ export function HeroSection({
       );
     }
 
-    // Overexposure flash — radial white glow that peaks at the moment of jump
-    if (flash) {
-      animate(flash, { opacity: [0, 0.65] }, { duration: RUSH_DURATION, ease: RUSH_EASE });
-    }
-
     // Main image — perspective z-zoom with blur
     animate(
       el,
@@ -125,7 +119,6 @@ export function HeroSection({
       animate(el,     { z: 0, filter: "blur(0px)", scale: 1 }, { duration: 0 });
       if (ghost1)  animate(ghost1,  { scale: 1, opacity: 0, filter: "blur(0px)" }, { duration: 0 });
       if (ghost2)  animate(ghost2,  { scale: 1, opacity: 0, filter: "blur(0px)" }, { duration: 0 });
-      if (flash)   animate(flash,   { opacity: 0 }, { duration: 0 });
       if (vignette) animate(vignette, { opacity: 0 }, { duration: 0 });
 
       if (!overlay) {
@@ -190,15 +183,6 @@ export function HeroSection({
         ref={ghost2Ref}
         className="absolute inset-0 will-change-transform pointer-events-none"
         style={{ ...TUNNEL_BG, opacity: 0 }}
-      />
-      {/* Overexposure flash — white radial glow at zoom peak */}
-      <div
-        ref={flashRef}
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          opacity: 0,
-          background: "radial-gradient(ellipse at center, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 40%, transparent 70%)",
-        }}
       />
       {/* Peripheral speed vignette — edges darken during Phase 1 zoom */}
       <div
