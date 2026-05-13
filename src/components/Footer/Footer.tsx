@@ -35,59 +35,52 @@ export function Footer({ onSectionChange }: FooterProps) {
   const t = useTranslations("footer");
   const ta = useTranslations("accessibility");
 
-  const year = new Date().getFullYear();
-  const copyright = t("copyright").replace("{year}", String(year));
-
   return (
     <footer className="fixed bottom-0 left-0 right-0 z-40 bg-footer-bg text-footer-text">
-      <div className="max-w-6xl mx-auto px-6 lg:px-16 py-14">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
+      <div className="max-w-6xl mx-auto px-6 lg:px-16 py-6">
 
-          {/* Nav links */}
-          <nav aria-label="Footer navigation">
-            <ul className="flex flex-col gap-y-3" role="list">
-              {NAV_ITEMS.map((item) => (
-                <li key={item.id}>
-                  <button
-                    onClick={() => onSectionChange?.(item.id as SectionId)}
-                    className="font-sans text-xs tracking-widest uppercase text-white/55 hover:text-white/90 transition-colors duration-150"
-                  >
-                    {t(`nav.${item.labelKey}`)}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </nav>
+        {/* Nav links — horizontal, centered */}
+        <nav aria-label="Footer navigation">
+          <ul className="flex flex-row flex-wrap justify-center gap-x-6 gap-y-2" role="list">
+            {NAV_ITEMS.map((item) => (
+              <li key={item.id}>
+                <button
+                  onClick={() => onSectionChange?.(item.id as SectionId)}
+                  className="font-sans text-[0.65rem] tracking-widest uppercase text-white/55 hover:text-white/90 transition-colors duration-150"
+                >
+                  {t(`nav.${item.labelKey}`)}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
-          {/* Social icons */}
-          <div className="flex items-center gap-5">
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:opacity-60 transition-opacity duration-150"
-              aria-label={ta("instagramLink")}
-            >
-              <InstagramIcon />
-            </a>
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:opacity-60 transition-opacity duration-150"
-              aria-label={ta("facebookLink")}
-            >
-              <FacebookIcon />
-            </a>
-          </div>
+        {/* Social icons — centered, on their own row */}
+        <div className="flex justify-center items-center gap-5 mt-3">
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white/55 hover:text-white/90 transition-colors duration-150"
+            aria-label={ta("instagramLink")}
+          >
+            <InstagramIcon />
+          </a>
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white/55 hover:text-white/90 transition-colors duration-150"
+            aria-label={ta("facebookLink")}
+          >
+            <FacebookIcon />
+          </a>
         </div>
 
-        {/* Divider */}
-        <div className="border-t border-white/10 mt-10 pt-6">
-          <p className="font-sans text-xs text-white/40 tracking-wide">
-            {copyright}
-          </p>
-        </div>
+        {/* Copyright */}
+        <p className="font-sans text-[0.6rem] text-white/30 tracking-wide text-center mt-3">
+          © Petr Machacek
+        </p>
       </div>
     </footer>
   );
