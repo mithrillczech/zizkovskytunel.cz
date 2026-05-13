@@ -72,7 +72,7 @@ export function HeroSection({ flickerKey, children }: HeroSectionProps) {
       animate(el, { filter: "brightness(1)" }, { duration: 0 });
       startAmbient();
     });
-  }, [flickerKey]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [flickerKey]);
 
   return (
     <div className="fixed inset-0 z-0 overflow-hidden" aria-hidden="true">
