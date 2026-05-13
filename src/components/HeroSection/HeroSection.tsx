@@ -107,7 +107,7 @@ export function HeroSection({
       overlay.style.transition = "none";
       overlay.style.opacity = "1";
       overlay.style.clipPath = "circle(150% at 50% 50%)";
-      overlay.style.filter = "blur(50px)";
+      overlay.style.filter = "blur(120px)";
 
       requestAnimationFrame(() => {
         overlay.style.transition = "clip-path 1.4s cubic-bezier(0.4, 0, 0.6, 1)";
@@ -115,15 +115,20 @@ export function HeroSection({
 
         const done = () => {
           overlay.removeEventListener("transitionend", done);
-          overlay.style.transition = "none";
+          // Fade out instead of hard-cut — the large blur leaves a visible dark
+          // blob at circle(0%) so an instant opacity:0 looks jarring.
+          overlay.style.transition = "opacity 0.35s ease";
           overlay.style.opacity = "0";
-          overlay.style.filter = "blur(0px)";
-          // Re-sync FM's internal cache so the next transition's reset is correct.
-          animate(overlay, { opacity: 0, clipPath: "circle(0% at 50% 50%)", filter: "blur(0px)" }, { duration: 0 });
-          // Content box appears only after the full darkness reveal is complete
-          onTransitionMidpoint();
-          // Resume ambient pulsing now that the transition is fully done
-          startAmbient();
+          setTimeout(() => {
+            overlay.style.transition = "none";
+            overlay.style.filter = "blur(0px)";
+            // Re-sync FM's internal cache so the next transition's reset is correct.
+            animate(overlay, { opacity: 0, clipPath: "circle(0% at 50% 50%)", filter: "blur(0px)" }, { duration: 0 });
+            // Content box appears only after the full darkness has faded
+            onTransitionMidpoint();
+            // Resume ambient pulsing now that the transition is fully done
+            startAmbient();
+          }, 350);
         };
         overlay.addEventListener("transitionend", done);
       });
