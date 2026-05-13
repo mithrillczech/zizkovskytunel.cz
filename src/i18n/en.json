@@ -4,6 +4,7 @@
     "history": "History",
     "gallery": "Gallery",
     "findUs": "How to Find Us",
+    "media": "Media",
     "contact": "Contact"
   },
   "header": {
@@ -75,6 +76,30 @@
       "directions": "Entrance from Žižkov: Seifertova street, near Náměstí Winstona Churchilla.\nEntrance from Karlín: Šaldova street.\nPublic transport: Metro B Florenc, tram Tachovské náměstí or Lipanská.",
       "mapNote": "The tunnel is open daily to pedestrians and cyclists."
     },
+    "media": {
+      "title": "Media",
+      "subtitle": "Press coverage and articles about the Žižkov Tunnel project.",
+      "articles": [
+        {
+          "title": "The Žižkov Tunnel: from infrastructure to art gallery",
+          "source": "Archiweb",
+          "date": "2025",
+          "url": "https://archiweb.cz"
+        },
+        {
+          "title": "Visionaries want to transform Prague's tunnel into a cultural corridor",
+          "source": "Hospodářské noviny",
+          "date": "2025",
+          "url": "https://ihned.cz"
+        },
+        {
+          "title": "A new High Line for Prague? The Žižkov Tunnel project launches",
+          "source": "Dezeen",
+          "date": "2025",
+          "url": "https://dezeen.com"
+        }
+      ]
+    },
     "contact": {
       "title": "Contact",
       "subtitle": "Interested in collaboration, partnership, or media inquiries? Write to us.",
@@ -96,6 +121,7 @@
       "history": "History",
       "gallery": "Gallery",
       "findUs": "How to Find Us",
+      "media": "Media",
       "contact": "Contact"
     }
   },

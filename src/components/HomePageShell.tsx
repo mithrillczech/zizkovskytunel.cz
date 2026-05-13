@@ -11,6 +11,7 @@ import { AboutSection } from "@/components/Sections/AboutSection";
 import { HistorySection } from "@/components/Sections/HistorySection";
 import { GallerySection } from "@/components/Sections/GallerySection";
 import { FindUsSection } from "@/components/Sections/FindUsSection";
+import { MediaSection } from "@/components/Sections/MediaSection";
 import { ContactSection } from "@/components/Sections/ContactSection";
 import { Footer } from "@/components/Footer/Footer";
 import type { GalleryImage, SectionId } from "@/types";
@@ -49,6 +50,7 @@ function HomePageInner({ galleryImages }: HomePageShellProps) {
       case "history": return <HistorySection />;
       case "gallery": return <GallerySection variant="grid" images={galleryImages} />;
       case "findus":  return <FindUsSection />;
+      case "media":   return <MediaSection />;
       case "contact": return <ContactSection />;
       default:        return null;
     }
@@ -114,6 +116,9 @@ function HomePageInner({ galleryImages }: HomePageShellProps) {
           </section>
           <section id="section-findus" className="py-14 px-6 border-b border-white/5">
             <FindUsSection />
+          </section>
+          <section id="section-media" className="py-14 px-6 border-b border-white/5">
+            <MediaSection />
           </section>
           <section id="section-contact" className="py-14 px-6">
             <ContactSection />

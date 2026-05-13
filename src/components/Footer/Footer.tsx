@@ -6,6 +6,7 @@ const NAV_ITEMS = [
   { id: "history", labelKey: "history" },
   { id: "gallery", labelKey: "gallery" },
   { id: "findus", labelKey: "findUs" },
+  { id: "media", labelKey: "media" },
   { id: "contact", labelKey: "contact" },
 ];
 

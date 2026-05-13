@@ -4,6 +4,7 @@
     "history": "Geschichte",
     "gallery": "Galerie",
     "findUs": "Anreise",
+    "media": "Medien",
     "contact": "Kontakt"
   },
   "header": {
@@ -75,6 +76,30 @@
       "directions": "Eingang von Žižkov: Seifertova-Straße, in der Nähe des Náměstí Winstona Churchilla.\nEingang von Karlín: Šaldova-Straße.\nÖPNV: U-Bahn B Florenc, Straßenbahn Tachovské náměstí oder Lipanská.",
       "mapNote": "Der Tunnel ist täglich für Fußgänger und Radfahrer geöffnet."
     },
+    "media": {
+      "title": "Medien",
+      "subtitle": "Pressemitteilungen und Artikel über das Projekt Žižkov Tunnel.",
+      "articles": [
+        {
+          "title": "Der Žižkov Tunnel: von der Infrastruktur zur Kunstgalerie",
+          "source": "Archiweb",
+          "date": "2025",
+          "url": "https://archiweb.cz"
+        },
+        {
+          "title": "Visionäre wollen Prager Tunnel in einen Kulturkorridor verwandeln",
+          "source": "Hospodářské noviny",
+          "date": "2025",
+          "url": "https://ihned.cz"
+        },
+        {
+          "title": "Eine neue High Line für Prag? Das Projekt Žižkov Tunnel startet",
+          "source": "Dezeen",
+          "date": "2025",
+          "url": "https://dezeen.com"
+        }
+      ]
+    },
     "contact": {
       "title": "Kontakt",
       "subtitle": "Interesse an Zusammenarbeit, Partnerschaft oder Medienanfragen? Schreiben Sie uns.",
@@ -96,6 +121,7 @@
       "history": "Geschichte",
       "gallery": "Galerie",
       "findUs": "Anreise",
+      "media": "Medien",
       "contact": "Kontakt"
     }
   },

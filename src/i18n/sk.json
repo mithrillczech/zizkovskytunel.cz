@@ -4,6 +4,7 @@
     "history": "História",
     "gallery": "Galéria",
     "findUs": "Ako nás nájdete",
+    "media": "Médiá",
     "contact": "Kontakt"
   },
   "header": {
@@ -75,6 +76,30 @@
       "directions": "Vstup od Žižkova: ulica Seifertova, v blízkosti Náměstí Winstona Churchilla.\nVstup od Karlína: ulica Šaldova.\nMHD: Metro B Florenc, električka Tachovské náměstí alebo Lipanská.",
       "mapNote": "Tunel je denne prístupný pre chodcov a cyklistov."
     },
+    "media": {
+      "title": "Médiá",
+      "subtitle": "Tlačové správy a články o projekte Žižkovský tunel.",
+      "articles": [
+        {
+          "title": "Žižkovský tunel: z infraštruktúry na galériu umenia",
+          "source": "Archiweb",
+          "date": "2025",
+          "url": "https://archiweb.cz"
+        },
+        {
+          "title": "Vizionári chcú premeniť pražský tunel na kultúrny koridor",
+          "source": "Hospodářské noviny",
+          "date": "2025",
+          "url": "https://ihned.cz"
+        },
+        {
+          "title": "Nový High Line pre Prahu? Spúšťa sa projekt Žižkovský tunel",
+          "source": "Dezeen",
+          "date": "2025",
+          "url": "https://dezeen.com"
+        }
+      ]
+    },
     "contact": {
       "title": "Kontakt",
       "subtitle": "Máte záujem o spoluprácu, partnerstvo alebo mediálne otázky? Napíšte nám.",
@@ -96,6 +121,7 @@
       "history": "História",
       "gallery": "Galéria",
       "findUs": "Ako nás nájdete",
+      "media": "Médiá",
       "contact": "Kontakt"
     }
   },

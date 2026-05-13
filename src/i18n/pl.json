@@ -4,6 +4,7 @@
     "history": "Historia",
     "gallery": "Galeria",
     "findUs": "Jak do nas dotrzeć",
+    "media": "Media",
     "contact": "Kontakt"
   },
   "header": {
@@ -75,6 +76,30 @@
       "directions": "Wejście od strony Žižkova: ulica Seifertova, w pobliżu Náměstí Winstona Churchilla.\nWejście od strony Karlína: ulica Šaldova.\nKomunikacja miejska: metro B Florenc, tramwaj Tachovské náměstí lub Lipanská.",
       "mapNote": "Tunel jest otwarty codziennie dla pieszych i rowerzystów."
     },
+    "media": {
+      "title": "Media",
+      "subtitle": "Artykuły prasowe i materiały medialne o projekcie Tunel Žižkov.",
+      "articles": [
+        {
+          "title": "Tunel Žižkov: od infrastruktury do galerii sztuki",
+          "source": "Archiweb",
+          "date": "2025",
+          "url": "https://archiweb.cz"
+        },
+        {
+          "title": "Wizjonerzy chcą przekształcić praski tunel w kulturowy korytarz",
+          "source": "Hospodářské noviny",
+          "date": "2025",
+          "url": "https://ihned.cz"
+        },
+        {
+          "title": "Nowy High Line dla Pragi? Rusza projekt Tunel Žižkov",
+          "source": "Dezeen",
+          "date": "2025",
+          "url": "https://dezeen.com"
+        }
+      ]
+    },
     "contact": {
       "title": "Kontakt",
       "subtitle": "Zainteresowany współpracą, partnerstwem lub zapytaniami medialnymi? Napisz do nas.",
@@ -96,6 +121,7 @@
       "history": "Historia",
       "gallery": "Galeria",
       "findUs": "Jak do nas dotrzeć",
+      "media": "Media",
       "contact": "Kontakt"
     }
   },

@@ -6,6 +6,7 @@ export type SectionId =
   | "history"
   | "gallery"
   | "findus"
+  | "media"
   | "contact";
 
 export interface NavItem {
