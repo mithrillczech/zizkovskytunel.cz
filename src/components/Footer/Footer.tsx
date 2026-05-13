@@ -54,7 +54,7 @@ export function Footer({ onSectionChange: _ }: FooterProps) {
 
         {/* Copyright — centered */}
         <p className="font-sans text-[0.6rem] text-white/30 tracking-wide">
-          © Petr Machacek
+          © Spolek žižkovského tunelu
         </p>
       </div>
     </footer>

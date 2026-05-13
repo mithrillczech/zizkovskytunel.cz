@@ -73,7 +73,11 @@
     "findUs": {
       "title": "Anreise",
       "address": "Žižkov Tunnel\nPrag 3 — Žižkov / Karlín / Holešovice",
-      "directions": "Eingang von Žižkov: Seifertova-Straße, in der Nähe des Náměstí Winstona Churchilla.\nEingang von Karlín: Šaldova-Straße.\nÖPNV: U-Bahn B Florenc, Straßenbahn Tachovské náměstí oder Lipanská.",
+      "entranceZizkov": "Eingang von Žižkov: Seifertova-Straße, in der Nähe des Náměstí Winstona Churchilla.",
+      "entranceKarlin": "Eingang von Karlín: Šaldova-Straße.",
+      "transport": "ÖPNV: U-Bahn B Florenc, Straßenbahn Tachovské náměstí oder Lipanská.",
+      "addressLabel": "Adresse",
+      "transportLabel": "Anreise",
       "mapNote": "Der Tunnel ist täglich für Fußgänger und Radfahrer geöffnet."
     },
     "media": {

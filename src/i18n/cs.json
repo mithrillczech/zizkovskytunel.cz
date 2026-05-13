@@ -73,7 +73,11 @@
     "findUs": {
       "title": "Jak nás najít",
       "address": "Žižkovský tunel\nPraha 3 — Žižkov / Karlín / Holešovice",
-      "directions": "Vstup od Žižkova: ulice Seifertova, poblíž Náměstí Winstona Churchilla.\nVstup od Karlína: ulice Šaldova.\nMHD: Metro B Florenc, tramvaj Tachovské náměstí nebo Lipanská.",
+      "entranceZizkov": "Vstup od Žižkova: ulice Seifertova, poblíž Náměstí Winstona Churchilla.",
+      "entranceKarlin": "Vstup od Karlína: ulice Šaldova.",
+      "transport": "MHD: Metro B Florenc, tramvaj Tachovské náměstí nebo Lipanská.",
+      "addressLabel": "Adresa",
+      "transportLabel": "Doprava",
       "mapNote": "Tunel je přístupný denně pro pěší a cyklisty."
     },
     "media": {
