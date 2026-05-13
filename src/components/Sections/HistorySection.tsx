@@ -16,17 +16,21 @@ export function HistorySection() {
       </p>
 
       <ol className="relative border-l border-white/10 space-y-8 ml-2">
-        {timeline.map((entry, i) => (
-          <li key={i} className="ml-6">
-            <div className="absolute -left-1.5 w-3 h-3 rounded-full bg-accent" />
-            <span className="font-display text-accent text-sm tracking-widest uppercase mb-1 block">
-              {entry.year}
-            </span>
-            <p className="text-text-primary/85 leading-relaxed text-sm lg:text-base">
-              {entry.text}
-            </p>
-          </li>
-        ))}
+        {timeline.map((entry, i) => {
+          const yearNum = parseInt(entry.year, 10);
+          const isFuture = !isNaN(yearNum) && yearNum > new Date().getFullYear();
+          return (
+            <li key={i} className="ml-6">
+              <div className={`absolute -left-1.5 w-3 h-3 rounded-full border border-accent ${isFuture ? "bg-transparent" : "bg-accent"}`} />
+              <span className={`font-display text-sm tracking-widest uppercase mb-1 block ${isFuture ? "text-accent/50" : "text-accent"}`}>
+                {entry.year}
+              </span>
+              <p className={`leading-relaxed text-sm lg:text-base ${isFuture ? "text-text-primary/50" : "text-text-primary/85"}`}>
+                {entry.text}
+              </p>
+            </li>
+          );
+        })}
       </ol>
     </div>
   );

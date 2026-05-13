@@ -94,12 +94,6 @@ function HomePageInner({ galleryImages }: HomePageShellProps) {
             }}
             aria-hidden="true"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-bg/50 to-bg/80" aria-hidden="true" />
-          <div className="absolute bottom-8 left-6 right-6">
-            <p className="font-display text-3xl font-light text-text-primary tracking-wide">
-              Žižkovský tunel
-            </p>
-          </div>
         </div>
 
         <main className="bg-bg pb-52">

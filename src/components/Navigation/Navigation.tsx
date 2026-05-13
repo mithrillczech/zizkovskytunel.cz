@@ -42,11 +42,11 @@ export function Navigation({ activeSection, onSectionChange }: NavigationProps) 
 
   return (
     <nav
-      className="hidden lg:flex w-full h-12 items-center justify-between px-10 xl:px-16 bg-bg/80 backdrop-blur-sm border-b border-white/5 z-40 relative"
+      className="hidden lg:flex w-full h-12 items-center px-10 xl:px-16 bg-bg/80 backdrop-blur-sm border-b border-white/5 z-40 relative"
       aria-label="Main navigation"
     >
-      {/* Nav items */}
-      <ul className="flex items-center gap-8" role="list">
+      {/* Nav items — centered, fills remaining space */}
+      <ul className="flex flex-1 items-center justify-center gap-8" role="list">
         {NAV_ITEMS.map((item) => {
           const isActive = activeSection === item.id;
           return (

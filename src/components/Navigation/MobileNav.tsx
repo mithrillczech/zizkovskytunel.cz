@@ -57,13 +57,13 @@ export function MobileNav({ activeSection, onSectionChange }: MobileNavProps) {
   return (
     <>
       {/* Sticky mobile header */}
-      <header className="lg:hidden sticky top-0 z-50 flex items-center justify-between h-14 px-6 bg-bg/95 backdrop-blur-md border-b border-white/5">
-        <span className="font-display text-lg font-light tracking-[0.15em] uppercase text-text-primary">
+      <header className="lg:hidden sticky top-0 z-50 flex items-center h-14 px-6 bg-bg/95 backdrop-blur-md border-b border-white/5">
+        <span className="flex-1 text-center font-display text-lg font-light tracking-[0.15em] uppercase text-text-primary">
           {th("title")}
         </span>
         <button
           onClick={() => setIsOpen((v) => !v)}
-          className="text-text-primary p-1"
+          className="absolute right-6 text-text-primary p-1"
           aria-label={isOpen ? ta("closeMenu") : ta("openMenu")}
           aria-expanded={isOpen}
         >
