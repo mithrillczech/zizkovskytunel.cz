@@ -98,14 +98,15 @@ export function HeroSection({
       // Reset overlay through Framer Motion so its internal cache is always in sync.
       // Direct .style assignments are invisible to FM and cause it to skip subsequent
       // animations (it sees no change from its cached value).
-      animate(overlay, { opacity: 1, clipPath: "circle(150% at 50% 50%)", filter: "blur(50px)" }, { duration: 0 });
+      animate(overlay, { opacity: 1, clipPath: "circle(150% at 50% 50%)", filter: "blur(20px)" }, { duration: 0 });
 
-      // Phase 2 — darkness collapses from edges toward the center
-      // (outer image edges revealed first, like tunnel lights turning on as you pass)
+      // Phase 2 — darkness collapses from edges toward the center.
+      // ease-in-out: outer edges collapse noticeably at the start, then slow at center.
+      // Reduced blur (20px) keeps the gradient soft but visible across the full viewport.
       animate(
         overlay,
         { clipPath: "circle(0% at 50% 50%)" },
-        { duration: 0.9, ease: [0, 0, 0.4, 1] }
+        { duration: 1.4, ease: [0.4, 0, 0.6, 1] }
       ).then(() => {
         animate(overlay, { opacity: 0, filter: "blur(0px)" }, { duration: 0 });
         // Content box appears only after the full darkness reveal is complete
