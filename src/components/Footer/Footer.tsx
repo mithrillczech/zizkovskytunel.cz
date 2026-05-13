@@ -39,46 +39,48 @@ export function Footer({ onSectionChange }: FooterProps) {
     <footer className="fixed bottom-0 left-0 right-0 z-40 bg-footer-bg text-footer-text">
       <div className="max-w-6xl mx-auto px-6 lg:px-16 py-6">
 
-        {/* Nav links — horizontal, centered */}
-        <nav aria-label="Footer navigation">
-          <ul className="flex flex-row flex-wrap justify-center gap-x-6 gap-y-2" role="list">
-            {NAV_ITEMS.map((item) => (
-              <li key={item.id}>
-                <button
-                  onClick={() => onSectionChange?.(item.id as SectionId)}
-                  className="font-sans text-[0.65rem] tracking-widest uppercase text-white/55 hover:text-white/90 transition-colors duration-150"
-                >
-                  {t(`nav.${item.labelKey}`)}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        {/* Nav links + social icons on same row */}
+        <div className="flex items-center justify-between gap-6">
+          <nav aria-label="Footer navigation">
+            <ul className="flex flex-row flex-wrap gap-x-6 gap-y-2" role="list">
+              {NAV_ITEMS.map((item) => (
+                <li key={item.id}>
+                  <button
+                    onClick={() => onSectionChange?.(item.id as SectionId)}
+                    className="font-sans text-[0.65rem] tracking-widest uppercase text-white/55 hover:text-white/90 transition-colors duration-150"
+                  >
+                    {t(`nav.${item.labelKey}`)}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-        {/* Social icons — centered, on their own row */}
-        <div className="flex justify-center items-center gap-5 mt-3">
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white/55 hover:text-white/90 transition-colors duration-150"
-            aria-label={ta("instagramLink")}
-          >
-            <InstagramIcon />
-          </a>
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white/55 hover:text-white/90 transition-colors duration-150"
-            aria-label={ta("facebookLink")}
-          >
-            <FacebookIcon />
-          </a>
+          {/* Social icons — right side */}
+          <div className="flex items-center gap-5 shrink-0">
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/55 hover:text-white/90 transition-colors duration-150"
+              aria-label={ta("instagramLink")}
+            >
+              <InstagramIcon />
+            </a>
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/55 hover:text-white/90 transition-colors duration-150"
+              aria-label={ta("facebookLink")}
+            >
+              <FacebookIcon />
+            </a>
+          </div>
         </div>
 
         {/* Copyright */}
-        <p className="font-sans text-[0.6rem] text-white/30 tracking-wide text-center mt-3">
+        <p className="font-sans text-[0.6rem] text-white/30 tracking-wide text-center lg:text-left mt-3">
           © Petr Machacek
         </p>
       </div>

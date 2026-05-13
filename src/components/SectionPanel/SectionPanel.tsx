@@ -8,10 +8,10 @@ interface SectionPanelProps {
   children: React.ReactNode;
 }
 
-// The background flicker in HeroSection runs for 0.45s.
+// The background flicker in HeroSection runs for 0.56s.
 // Content disappears instantly, stays hidden during the flicker,
 // then appears cleanly once the background animation is done.
-const FLICKER_DURATION = 0.45;
+const FLICKER_DURATION = 0.56;
 
 export function SectionPanel({ section, children }: SectionPanelProps) {
   return (
