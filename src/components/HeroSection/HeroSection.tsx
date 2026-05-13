@@ -2,53 +2,31 @@
 
 import { useEffect, useRef } from "react";
 import { animate } from "framer-motion";
-import type { SectionId } from "@/types";
 
 interface HeroSectionProps {
-  activeSection: SectionId;
-  onTransitionMidpoint: () => void;
   children?: React.ReactNode;
 }
 
-export function HeroSection({
-  activeSection,
-  onTransitionMidpoint,
-  children,
-}: HeroSectionProps) {
-  const imgRef     = useRef<HTMLDivElement>(null);
-  const isFirstMount = useRef(true);
+export function HeroSection({ children }: HeroSectionProps) {
+  const imgRef    = useRef<HTMLDivElement>(null);
   const ambientRef = useRef<ReturnType<typeof animate> | null>(null);
 
-  const startAmbient = () => {
+  useEffect(() => {
     const el = imgRef.current;
     if (!el) return;
     if (typeof window !== "undefined" &&
         window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    ambientRef.current?.stop();
+
     ambientRef.current = animate(
       el,
       { scale: [1, 1.04, 1] },
       { duration: 8, ease: "easeInOut", repeat: Infinity }
     );
-  };
-
-  useEffect(() => {
-    startAmbient();
     return () => { ambientRef.current?.stop(); };
   }, []);
 
-  useEffect(() => {
-    if (isFirstMount.current) {
-      isFirstMount.current = false;
-      return;
-    }
-    onTransitionMidpoint();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeSection]);
-
   return (
     <div className="fixed inset-0 z-0 overflow-hidden" aria-hidden="true">
-      {/* Tunnel image — ambient breathing only */}
       <div
         ref={imgRef}
         className="absolute inset-0 will-change-transform"

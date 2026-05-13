@@ -4,21 +4,21 @@ import { AnimatePresence, motion } from "framer-motion";
 import type { SectionId } from "@/types";
 
 interface SectionPanelProps {
-  visibleSection: SectionId;
+  section: SectionId;
   children: React.ReactNode;
 }
 
-export function SectionPanel({ visibleSection, children }: SectionPanelProps) {
+export function SectionPanel({ section, children }: SectionPanelProps) {
   return (
     <div className="fixed inset-0 z-20 flex items-end lg:items-center justify-center pointer-events-none">
       <AnimatePresence mode="wait">
-        {visibleSection !== "none" && (
+        {section !== "none" && (
           <motion.div
-            key={visibleSection}
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.3, ease: "easeOut", delay: 0.05 }}
+            key={section}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.15, ease: "easeInOut" }}
             className="
               pointer-events-auto
               w-full max-w-4xl mx-4 lg:mx-auto
