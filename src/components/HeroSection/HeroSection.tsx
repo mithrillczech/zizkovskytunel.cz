@@ -107,7 +107,7 @@ export function HeroSection({
       overlay.style.transition = "none";
       overlay.style.opacity = "1";
       overlay.style.clipPath = "circle(150% at 50% 50%)";
-      overlay.style.filter = "blur(20px)";
+      overlay.style.filter = "blur(50px)";
 
       requestAnimationFrame(() => {
         overlay.style.transition = "clip-path 1.4s cubic-bezier(0.4, 0, 0.6, 1)";
