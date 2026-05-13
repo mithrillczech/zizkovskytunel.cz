@@ -8,7 +8,7 @@ interface HeroSectionProps {
   children?: React.ReactNode;
 }
 
-// Matches the exit sequence in SectionPanel — full flicker cycle over ~0.20s
+// Matches the exit sequence in SectionPanel — full flicker cycle over ~0.25s
 const FLICKER_BRIGHTNESS = [
   "brightness(1)",
   "brightness(1.25)",
@@ -60,7 +60,7 @@ export function HeroSection({ flickerKey, children }: HeroSectionProps) {
     animate(
       el,
       { filter: FLICKER_BRIGHTNESS },
-      { duration: 0.20, ease: "linear" }
+      { duration: 0.25, ease: "linear" }
     ).then(() => {
       animate(el, { filter: "brightness(1)" }, { duration: 0 });
       startAmbient();
