@@ -6,6 +6,7 @@ import { Header } from "@/components/Header/Header";
 import { Navigation } from "@/components/Navigation/Navigation";
 import { MobileNav } from "@/components/Navigation/MobileNav";
 import { HeroSection } from "@/components/HeroSection/HeroSection";
+import { HeroOverlay } from "@/components/HeroSection/HeroOverlay";
 import { SectionPanel } from "@/components/SectionPanel/SectionPanel";
 import { AboutSection } from "@/components/Sections/AboutSection";
 import { GallerySection } from "@/components/Sections/GallerySection";
@@ -13,6 +14,28 @@ import { FoundersSection } from "@/components/Sections/FoundersSection";
 import { FindUsSection } from "@/components/Sections/FindUsSection";
 import { Footer } from "@/components/Footer/Footer";
 import type { GalleryImage, SectionId } from "@/types";
+
+import { useTranslations } from "next-intl";
+
+function MobileHeroText() {
+  const t = useTranslations("hero");
+  return (
+    <>
+      <p className="font-sans text-[0.5rem] tracking-[0.4em] uppercase text-text-muted mb-3">
+        {t("eyebrow")}
+      </p>
+      <h2 className="font-display text-5xl font-light tracking-[0.1em] uppercase text-accent leading-none mb-3">
+        {t("headline")}
+      </h2>
+      <p className="font-sans text-[0.55rem] tracking-[0.25em] uppercase text-text-primary/60 max-w-[240px] mb-3">
+        {t("subtitle")}
+      </p>
+      <p className="font-display text-sm font-light italic text-text-primary/55 max-w-[260px] leading-relaxed">
+        {t("tagline")}
+      </p>
+    </>
+  );
+}
 
 interface HomePageShellProps {
   galleryImages: GalleryImage[];
@@ -70,6 +93,8 @@ function HomePageInner({ galleryImages }: HomePageShellProps) {
           </SectionPanel>
         </HeroSection>
 
+        <HeroOverlay section={section} />
+
         <Footer onSectionChange={handleSectionChange} />
       </div>
 
@@ -80,7 +105,7 @@ function HomePageInner({ galleryImages }: HomePageShellProps) {
           onSectionChange={handleSectionChange}
         />
 
-        <div className="relative w-full" style={{ height: "60vw", minHeight: "260px" }}>
+        <div className="relative w-full" style={{ height: "70vw", minHeight: "300px" }}>
           <div
             className="absolute inset-0"
             style={{
@@ -90,8 +115,14 @@ function HomePageInner({ galleryImages }: HomePageShellProps) {
             }}
             aria-hidden="true"
           />
+          {/* Dark overlay for legibility */}
+          <div className="absolute inset-0 bg-bg/40" aria-hidden="true" />
+          {/* Hero text */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 pb-4">
+            <MobileHeroText />
+          </div>
           {/* Bottom fade to background */}
-          <div className="absolute bottom-0 left-0 right-0 h-[10%] bg-gradient-to-t from-bg to-transparent" aria-hidden="true" />
+          <div className="absolute bottom-0 left-0 right-0 h-[15%] bg-gradient-to-t from-bg to-transparent" aria-hidden="true" />
         </div>
 
         <main className="bg-bg pb-28">

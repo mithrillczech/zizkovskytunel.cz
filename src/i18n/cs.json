@@ -1,4 +1,11 @@
 {
+  "hero": {
+    "eyebrow": "Spolek žižkovského tunelu",
+    "headline": "TUNEL!",
+    "subtitle": "Galerie současného umění ve veřejném prostoru",
+    "tagline": "Proměňujeme Žižkovský tunel v živou kulturní osu propojující Žižkov, Karlín a Holešovice.",
+    "cta": "Podpořit projekt"
+  },
   "nav": {
     "about": "O projektu",
     "gallery": "Galerie",
@@ -6,13 +13,39 @@
     "findUs": "Jak nás najít"
   },
   "header": {
-    "prefix": "Žižkovský",
     "highlight": "TUNEL!"
   },
   "sections": {
     "about": {
       "title": "O projektu",
-      "body": "Spolek žižkovského tunelu je nezávislá iniciativa, která vznikla v roce 2025 a sdružuje přední osobnosti z oblasti architektury, umění a kultury. Naším cílem je proměnit žižkovský tunel ve vibrující galerii současného umění a otevřený veřejný prostor.\n\nProjekt propojuje čtvrti Žižkov, Karlín a Holešovice a tvoří kulturní osu procházející srdcem Prahy. Inspirujeme se světově proslulými projekty, jako je High Line v New Yorku.\n\nSpolek stojí na principech otevřenosti, spolupráce a dlouhodobé péče o veřejný prostor."
+      "intro": {
+        "heading": "Tunel jako galerie",
+        "p1": "Spolek Žižkovského tunelu vznikl v roce 2025 s cílem proměnit dnes převážně tranzitní prostor v kurátorsky vedenou galerii současného umění.",
+        "p2": "Projekt propojuje architekturu, umění a veřejný prostor a vytváří nové místo pro setkávání obyvatel i návštěvníků Prahy."
+      },
+      "vision": {
+        "label": "Vize",
+        "heading": "Nová kulturní osa Prahy",
+        "item0": "Propojujeme Žižkov, Karlín a Holešovice.",
+        "item1": "Místo pro umění, inspiraci a společné zážitky.",
+        "item2": "Nový symbol současné Prahy."
+      },
+      "how": {
+        "label": "Jak to bude fungovat",
+        "heading": "3 nová díla každý rok",
+        "feature0": "Kurátorský výběr",
+        "feature1": "Site-specific instalace",
+        "feature2": "Respekt k architektuře",
+        "feature3": "Bezpečnost a funkčnost",
+        "feature4": "Vernisáže a komunitní akce",
+        "note": "Po dobu 10 let budou do tunelu instalována díla českých i zahraničních umělců."
+      },
+      "why": {
+        "label": "Proč právě Žižkovský tunel?",
+        "item0": "Výjimečná architektura",
+        "item1": "Denní kontakt s veřejností",
+        "item2": "Kulturní potenciál"
+      }
     },
     "founders": {
       "title": "Zakladatelé",

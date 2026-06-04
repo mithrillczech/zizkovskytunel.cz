@@ -1,4 +1,11 @@
 {
+  "hero": {
+    "eyebrow": "Žižkov Tunnel Association",
+    "headline": "TUNNEL!",
+    "subtitle": "A contemporary art gallery in public space",
+    "tagline": "We are transforming the Žižkov Tunnel into a living cultural axis connecting Žižkov, Karlín and Holešovice.",
+    "cta": "Support the project"
+  },
   "nav": {
     "about": "About the Project",
     "gallery": "Gallery",
@@ -6,13 +13,39 @@
     "findUs": "How to Find Us"
   },
   "header": {
-    "prefix": "Žižkov",
     "highlight": "TUNNEL!"
   },
   "sections": {
     "about": {
       "title": "About the Project",
-      "body": "The Žižkov Tunnel Association is an independent initiative founded in 2025 by prominent figures from the fields of architecture, art, and culture. Our goal is to transform the Žižkov Tunnel into a vibrant gallery of contemporary art and an open public space.\n\nThe project connects the districts of Žižkov, Karlín, and Holešovice, forming a cultural axis through the heart of Prague. We draw inspiration from world-renowned projects such as the High Line in New York City.\n\nThe association is built on principles of openness, collaboration, and long-term care for public space."
+      "intro": {
+        "heading": "The tunnel as a gallery",
+        "p1": "The Žižkov Tunnel Association was founded in 2025 with the goal of transforming a predominantly transit space into a curated gallery of contemporary art.",
+        "p2": "The project brings together architecture, art and public space, creating a new place for residents and visitors of Prague to meet."
+      },
+      "vision": {
+        "label": "Vision",
+        "heading": "A new cultural axis of Prague",
+        "item0": "Connecting Žižkov, Karlín and Holešovice.",
+        "item1": "A place for art, inspiration and shared experiences.",
+        "item2": "A new symbol of contemporary Prague."
+      },
+      "how": {
+        "label": "How it will work",
+        "heading": "3 new artworks every year",
+        "feature0": "Curatorial selection",
+        "feature1": "Site-specific installations",
+        "feature2": "Respect for the architecture",
+        "feature3": "Safety and functionality",
+        "feature4": "Openings and community events",
+        "note": "Over 10 years, works by Czech and international artists will be installed in the tunnel."
+      },
+      "why": {
+        "label": "Why the Žižkov Tunnel?",
+        "item0": "Exceptional architecture",
+        "item1": "Daily contact with the public",
+        "item2": "Cultural potential"
+      }
     },
     "founders": {
       "title": "Founders",

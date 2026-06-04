@@ -56,13 +56,8 @@ export function MobileNav({ activeSection, onSectionChange }: MobileNavProps) {
     <>
       {/* Sticky mobile header */}
       <header className="lg:hidden sticky top-0 z-50 flex items-center h-14 px-6 bg-bg/95 backdrop-blur-md border-b border-white/5">
-        <span className="flex-1 flex items-baseline justify-center gap-2 uppercase">
-          <span className="font-display text-sm font-light tracking-[0.2em] text-text-muted">
-            {th("prefix")}
-          </span>
-          <span className="font-display text-xl font-bold tracking-[0.12em] text-accent">
-            {th("highlight")}
-          </span>
+        <span className="flex-1 text-center font-display text-xl font-bold tracking-[0.12em] uppercase text-accent">
+          {th("highlight")}
         </span>
         <button
           onClick={() => setIsOpen((v) => !v)}
