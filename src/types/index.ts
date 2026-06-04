@@ -3,11 +3,9 @@ export type Locale = "cs" | "en";
 export type SectionId =
   | "none"
   | "about"
-  | "history"
   | "gallery"
-  | "findus"
-  | "media"
-  | "contact";
+  | "founders"
+  | "findus";
 
 export interface NavItem {
   id: SectionId;

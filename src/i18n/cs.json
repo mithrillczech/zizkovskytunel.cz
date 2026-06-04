@@ -1,68 +1,37 @@
 {
   "nav": {
-    "about": "O nás",
-    "history": "Historie",
+    "about": "O projektu",
     "gallery": "Galerie",
-    "findUs": "Jak nás najít",
-    "media": "Média",
-    "contact": "Kontakt"
+    "founders": "Zakladatelé",
+    "findUs": "Jak nás najít"
   },
   "header": {
-    "title": "Žižkovský tunel"
+    "prefix": "Žižkovský",
+    "highlight": "TUNEL!"
   },
   "sections": {
     "about": {
-      "title": "O nás",
-      "body": "Spolek žižkovského tunelu je nezávislá iniciativa, která vznikla v roce 2025 a sdružuje přední osobnosti z oblasti architektury, umění a kultury. Naším cílem je proměnit žižkovský tunel ve vibrující galerii současného umění a otevřený veřejný prostor.\n\nProjekt propojuje čtvrti Žižkov, Karlín a Holešovice a tvoří kulturní osu procházející srdcem Prahy. Inspirujeme se světově proslulými projekty, jako je High Line v New Yorku.\n\nSpolek stojí na principech otevřenosti, spolupráce a dlouhodobé péče o veřejný prostor.",
-      "members": {
-        "title": "Zakladatelé",
-        "list": [
-          {
-            "name": "Martin Wichterle",
-            "role": "Průmyslník, majitel skupiny Wikov, sklárny Bomma a Rückl"
-          },
-          {
-            "name": "Jiří Řezák",
-            "role": "Architekt, zakladatel studia QARTA Architektura"
-          },
-          {
-            "name": "David Koller",
-            "role": "Hudebník, producent a kulturní iniciátor"
-          },
-          {
-            "name": "Jiří Fajt",
-            "role": "Historik umění a umělecký ředitel, bývalý generální ředitel Národní galerie v Praze"
-          }
-        ]
-      }
+      "title": "O projektu",
+      "body": "Spolek žižkovského tunelu je nezávislá iniciativa, která vznikla v roce 2025 a sdružuje přední osobnosti z oblasti architektury, umění a kultury. Naším cílem je proměnit žižkovský tunel ve vibrující galerii současného umění a otevřený veřejný prostor.\n\nProjekt propojuje čtvrti Žižkov, Karlín a Holešovice a tvoří kulturní osu procházející srdcem Prahy. Inspirujeme se světově proslulými projekty, jako je High Line v New Yorku.\n\nSpolek stojí na principech otevřenosti, spolupráce a dlouhodobé péče o veřejný prostor."
     },
-    "history": {
-      "title": "Historie",
-      "intro": "Žižkovský tunel je jedinečný infrastrukturní prvek, který propojuje tři pražské čtvrti pod horou Vítkov. Dnes slouží jako každodenní koridor pro pěší a cyklisty — a my věříme, že může sloužit i jako průchod do světa kultury.",
-      "timeline": [
+    "founders": {
+      "title": "Zakladatelé",
+      "list": [
         {
-          "year": "Vznik tunelu",
-          "text": "Tunel byl postaven jako součást dopravní infrastruktury a slouží svému účelu dodnes."
+          "name": "Martin Wichterle",
+          "role": "Průmyslník, majitel skupiny Wikov, sklárny Bomma a Rückl"
         },
         {
-          "year": "2025",
-          "text": "Vznik Spolku žižkovského tunelu. Skupina vizionářů se rozhodla přetvořit tunel v galerii světového formátu."
+          "name": "Jiří Řezák",
+          "role": "Architekt, zakladatel studia QARTA Architektura"
         },
         {
-          "year": "Plán",
-          "text": "Desetiletý plán zahrnuje instalaci tří děl od českých a zahraničních umělců ročně. Každé dílo je navrženo přímo pro prostor tunelu."
+          "name": "David Koller",
+          "role": "Hudebník, producent a kulturní iniciátor"
         },
         {
-          "year": "2027",
-          "text": "Plánovaná instalace prvních tří uměleckých děl. Otevření tunelu veřejnosti jako živé galerie — úvodní kapitola kulturní transformace prostoru."
-        },
-        {
-          "year": "2030",
-          "text": "Druhá vlna tří instalací rozšiřuje tematický záběr a zapojuje mezinárodní umělce. Tunel se etabluje jako uznávané kulturní místo na mapě Prahy."
-        },
-        {
-          "year": "2033",
-          "text": "Třetí etapa uzavírá první dekádu projektu devíti trvalými díly. Tunel se stává ikonickým místem na křižovatce veřejného prostoru a současného umění."
+          "name": "Jiří Fajt",
+          "role": "Historik umění a umělecký ředitel, bývalý generální ředitel Národní galerie v Praze"
         }
       ]
     },
@@ -79,54 +48,15 @@
       "addressLabel": "Adresa",
       "transportLabel": "Doprava",
       "mapNote": "Tunel je přístupný denně pro pěší a cyklisty."
-    },
-    "media": {
-      "title": "Média",
-      "subtitle": "Tiskové zprávy a články o projektu Žižkovský tunel.",
-      "articles": [
-        {
-          "title": "Žižkovský tunel: z infrastruktury na galerii umění",
-          "source": "Archiweb",
-          "date": "2025",
-          "url": "https://archiweb.cz"
-        },
-        {
-          "title": "Vizionáři chtějí proměnit pražský tunel v kulturní koridor",
-          "source": "Hospodářské noviny",
-          "date": "2025",
-          "url": "https://ihned.cz"
-        },
-        {
-          "title": "Nový High Line pro Prahu? Spouští se projekt Žižkovský tunel",
-          "source": "Dezeen",
-          "date": "2025",
-          "url": "https://dezeen.com"
-        }
-      ]
-    },
-    "contact": {
-      "title": "Kontakt",
-      "subtitle": "Máte zájem o spolupráci, partnerství nebo mediální dotazy? Napište nám.",
-      "namePlaceholder": "Celé jméno",
-      "emailPlaceholder": "E-mailová adresa",
-      "messagePlaceholder": "Vaše zpráva...",
-      "sendButton": "Odeslat zprávu",
-      "successMessage": "Děkujeme! Vaše zpráva byla odeslána. Brzy se vám ozveme.",
-      "errorMessage": "Omlouváme se, zprávu se nepodařilo odeslat. Zkuste to prosím znovu.",
-      "nameLabel": "Jméno",
-      "emailLabel": "E-mail",
-      "messageLabel": "Zpráva"
     }
   },
   "footer": {
     "copyright": "© {year} Petr Machacek. Všechna práva vyhrazena.",
     "nav": {
-      "about": "O nás",
-      "history": "Historie",
+      "about": "O projektu",
       "gallery": "Galerie",
-      "findUs": "Jak nás najít",
-      "media": "Média",
-      "contact": "Kontakt"
+      "founders": "Zakladatelé",
+      "findUs": "Jak nás najít"
     }
   },
   "meta": {

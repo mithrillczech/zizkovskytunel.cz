@@ -8,11 +8,9 @@ import { MobileNav } from "@/components/Navigation/MobileNav";
 import { HeroSection } from "@/components/HeroSection/HeroSection";
 import { SectionPanel } from "@/components/SectionPanel/SectionPanel";
 import { AboutSection } from "@/components/Sections/AboutSection";
-import { HistorySection } from "@/components/Sections/HistorySection";
 import { GallerySection } from "@/components/Sections/GallerySection";
+import { FoundersSection } from "@/components/Sections/FoundersSection";
 import { FindUsSection } from "@/components/Sections/FindUsSection";
-import { MediaSection } from "@/components/Sections/MediaSection";
-import { ContactSection } from "@/components/Sections/ContactSection";
 import { Footer } from "@/components/Footer/Footer";
 import type { GalleryImage, SectionId } from "@/types";
 
@@ -46,13 +44,11 @@ function HomePageInner({ galleryImages }: HomePageShellProps) {
 
   function renderSection() {
     switch (section) {
-      case "about":   return <AboutSection />;
-      case "history": return <HistorySection />;
-      case "gallery": return <GallerySection variant="grid" images={galleryImages} />;
-      case "findus":  return <FindUsSection />;
-      case "media":   return <MediaSection />;
-      case "contact": return <ContactSection />;
-      default:        return null;
+      case "about":    return <AboutSection />;
+      case "gallery":  return <GallerySection variant="grid" images={galleryImages} />;
+      case "founders": return <FoundersSection />;
+      case "findus":   return <FindUsSection />;
+      default:         return null;
     }
   }
 
@@ -102,22 +98,16 @@ function HomePageInner({ galleryImages }: HomePageShellProps) {
           <section id="section-about" className="py-7 px-6 border-b border-white/5">
             <AboutSection />
           </section>
-          <section id="section-history" className="py-7 px-6 border-b border-white/5">
-            <HistorySection />
-          </section>
           <section id="section-gallery" className="py-7 border-b border-white/5">
             <div className="px-6 mb-3">
               <GallerySection variant="carousel" images={galleryImages} />
             </div>
           </section>
-          <section id="section-findus" className="py-7 px-6 border-b border-white/5">
+          <section id="section-founders" className="py-7 px-6 border-b border-white/5">
+            <FoundersSection />
+          </section>
+          <section id="section-findus" className="py-7 px-6">
             <FindUsSection />
-          </section>
-          <section id="section-media" className="py-7 px-6 border-b border-white/5">
-            <MediaSection />
-          </section>
-          <section id="section-contact" className="py-7 px-6">
-            <ContactSection />
           </section>
         </main>
 

@@ -8,11 +8,7 @@ import type { SectionId } from "@/types";
 
 const LOCALES = [
   { code: "cs", label: "CS" },
-  { code: "de", label: "DE" },
   { code: "en", label: "EN" },
-  { code: "pl", label: "PL" },
-  { code: "sk", label: "SK" },
-  // Add more locales here — dropdown grows automatically
 ];
 
 interface LanguageSwitcherProps {

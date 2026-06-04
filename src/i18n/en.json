@@ -1,68 +1,37 @@
 {
   "nav": {
-    "about": "About Us",
-    "history": "History",
+    "about": "About the Project",
     "gallery": "Gallery",
-    "findUs": "How to Find Us",
-    "media": "Media",
-    "contact": "Contact"
+    "founders": "Founders",
+    "findUs": "How to Find Us"
   },
   "header": {
-    "title": "Žižkov Tunnel"
+    "prefix": "Žižkov",
+    "highlight": "TUNNEL!"
   },
   "sections": {
     "about": {
-      "title": "About Us",
-      "body": "The Žižkov Tunnel Association is an independent initiative founded in 2025 by prominent figures from the fields of architecture, art, and culture. Our goal is to transform the Žižkov Tunnel into a vibrant gallery of contemporary art and an open public space.\n\nThe project connects the districts of Žižkov, Karlín, and Holešovice, forming a cultural axis through the heart of Prague. We draw inspiration from world-renowned projects such as the High Line in New York City.\n\nThe association is built on principles of openness, collaboration, and long-term care for public space.",
-      "members": {
-        "title": "Founding Members",
-        "list": [
-          {
-            "name": "Martin Wichterle",
-            "role": "Industrialist, owner of the Wikov engineering group and the Bomma and Rückl glassworks"
-          },
-          {
-            "name": "Jiří Řezák",
-            "role": "Architect and owner of the QARTA Architektura studio"
-          },
-          {
-            "name": "David Koller",
-            "role": "Musician, producer, and cultural initiator"
-          },
-          {
-            "name": "Jiří Fajt",
-            "role": "Art historian and artistic director, former Director General of the National Gallery in Prague"
-          }
-        ]
-      }
+      "title": "About the Project",
+      "body": "The Žižkov Tunnel Association is an independent initiative founded in 2025 by prominent figures from the fields of architecture, art, and culture. Our goal is to transform the Žižkov Tunnel into a vibrant gallery of contemporary art and an open public space.\n\nThe project connects the districts of Žižkov, Karlín, and Holešovice, forming a cultural axis through the heart of Prague. We draw inspiration from world-renowned projects such as the High Line in New York City.\n\nThe association is built on principles of openness, collaboration, and long-term care for public space."
     },
-    "history": {
-      "title": "History",
-      "intro": "The Žižkov Tunnel is a unique piece of infrastructure connecting three Prague districts beneath Vítkov Hill. Today it serves as a daily corridor for pedestrians and cyclists — and we believe it can also serve as a passage into the world of culture.",
-      "timeline": [
+    "founders": {
+      "title": "Founders",
+      "list": [
         {
-          "year": "Origins",
-          "text": "The tunnel was built as part of the city's transport infrastructure and continues to serve that purpose to this day."
+          "name": "Martin Wichterle",
+          "role": "Industrialist, owner of the Wikov engineering group and the Bomma and Rückl glassworks"
         },
         {
-          "year": "2025",
-          "text": "The Žižkov Tunnel Association is founded. A group of visionaries decides to transform the tunnel into a world-class gallery."
+          "name": "Jiří Řezák",
+          "role": "Architect and owner of the QARTA Architektura studio"
         },
         {
-          "year": "The Plan",
-          "text": "A ten-year plan envisions three installations per year by Czech and international artists. Each work is designed specifically for the tunnel space."
+          "name": "David Koller",
+          "role": "Musician, producer, and cultural initiator"
         },
         {
-          "year": "2027",
-          "text": "The first three artworks are installed. The tunnel opens to the public as a living gallery — the opening chapter of a cultural transformation."
-        },
-        {
-          "year": "2030",
-          "text": "A second wave of three installations broadens the thematic scope and brings in international artists. The tunnel establishes itself as a recognised cultural destination on the map of Prague."
-        },
-        {
-          "year": "2033",
-          "text": "The third phase closes the first decade with nine permanent works. The tunnel becomes an iconic site at the intersection of public space and contemporary art."
+          "name": "Jiří Fajt",
+          "role": "Art historian and artistic director, former Director General of the National Gallery in Prague"
         }
       ]
     },
@@ -79,54 +48,15 @@
       "addressLabel": "Address",
       "transportLabel": "Transport",
       "mapNote": "The tunnel is open daily to pedestrians and cyclists."
-    },
-    "media": {
-      "title": "Media",
-      "subtitle": "Press coverage and articles about the Žižkov Tunnel project.",
-      "articles": [
-        {
-          "title": "The Žižkov Tunnel: from infrastructure to art gallery",
-          "source": "Archiweb",
-          "date": "2025",
-          "url": "https://archiweb.cz"
-        },
-        {
-          "title": "Visionaries want to transform Prague's tunnel into a cultural corridor",
-          "source": "Hospodářské noviny",
-          "date": "2025",
-          "url": "https://ihned.cz"
-        },
-        {
-          "title": "A new High Line for Prague? The Žižkov Tunnel project launches",
-          "source": "Dezeen",
-          "date": "2025",
-          "url": "https://dezeen.com"
-        }
-      ]
-    },
-    "contact": {
-      "title": "Contact",
-      "subtitle": "Interested in collaboration, partnership, or media inquiries? Write to us.",
-      "namePlaceholder": "Full name",
-      "emailPlaceholder": "Email address",
-      "messagePlaceholder": "Your message...",
-      "sendButton": "Send Message",
-      "successMessage": "Thank you! Your message has been sent. We will get back to you shortly.",
-      "errorMessage": "We're sorry, the message could not be sent. Please try again.",
-      "nameLabel": "Name",
-      "emailLabel": "Email",
-      "messageLabel": "Message"
     }
   },
   "footer": {
     "copyright": "© {year} Petr Machacek. All rights reserved.",
     "nav": {
-      "about": "About Us",
-      "history": "History",
+      "about": "About the Project",
       "gallery": "Gallery",
-      "findUs": "How to Find Us",
-      "media": "Media",
-      "contact": "Contact"
+      "founders": "Founders",
+      "findUs": "How to Find Us"
     }
   },
   "meta": {

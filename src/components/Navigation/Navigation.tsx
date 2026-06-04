@@ -5,12 +5,10 @@ import type { SectionId } from "@/types";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
 const NAV_ITEMS: { id: SectionId; labelKey: string }[] = [
-  { id: "about", labelKey: "about" },
-  { id: "history", labelKey: "history" },
-  { id: "gallery", labelKey: "gallery" },
-  { id: "findus", labelKey: "findUs" },
-  { id: "media", labelKey: "media" },
-  { id: "contact", labelKey: "contact" },
+  { id: "about",    labelKey: "about"    },
+  { id: "gallery",  labelKey: "gallery"  },
+  { id: "founders", labelKey: "founders" },
+  { id: "findus",   labelKey: "findUs"   },
 ];
 
 interface NavigationProps {
