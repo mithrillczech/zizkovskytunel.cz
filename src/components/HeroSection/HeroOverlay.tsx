@@ -26,18 +26,12 @@ export function HeroOverlay({ section }: HeroOverlayProps) {
           >
             {/* ── BOTTOM: semi-transparent card ── */}
             <div className="flex justify-center px-6 pb-2 pointer-events-auto">
-              <div className="
-                w-full max-w-xl
-                bg-black/25 backdrop-blur-[2px]
-                border border-white/6
-                px-8 py-6
-                flex flex-col items-center gap-4 text-center
-              ">
-                <p className="font-display text-base xl:text-lg font-light tracking-[0.15em] uppercase text-text-primary/75">
+              <div className="w-full max-w-xl px-8 py-6 flex flex-col items-center gap-4 text-center">
+                <p className="font-sans font-light text-sm xl:text-base tracking-[0.25em] uppercase text-text-primary/75">
                   {t("subtitle")}
                 </p>
 
-                <p className="font-display text-base xl:text-lg font-light text-text-primary/70 leading-relaxed max-w-md">
+                <p className="font-sans font-light text-sm xl:text-base text-text-primary/70 leading-relaxed max-w-md">
                   {t("tagline")}
                 </p>
 
@@ -45,8 +39,8 @@ export function HeroOverlay({ section }: HeroOverlayProps) {
                   mt-1
                   font-sans font-light text-[0.65rem] tracking-[0.25em] uppercase
                   px-8 py-3
-                  bg-black/80 text-text-primary/80
-                  hover:bg-black hover:text-text-primary
+                  bg-accent text-bg
+                  hover:bg-accent-hover
                   transition-colors duration-200
                 ">
                   {t("cta")}

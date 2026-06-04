@@ -50,7 +50,7 @@ export function Navigation({ activeSection, onSectionChange }: NavigationProps) 
           return (
             <li key={item.id}>
               <button
-                onClick={() => onSectionChange(isActive ? "none" : item.id)}
+                onClick={() => onSectionChange(item.id)}
                 className={`
                   font-sans text-xs tracking-widest uppercase transition-colors duration-150 pb-0.5
                   ${isActive

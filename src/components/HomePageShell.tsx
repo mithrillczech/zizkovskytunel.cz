@@ -21,11 +21,11 @@ function MobileHeroText() {
   const t = useTranslations("hero");
   return (
     <div className="w-full h-full flex flex-col justify-end pb-5 px-5">
-      <div className="bg-black/25 backdrop-blur-[2px] border border-white/6 px-5 py-4 text-center flex flex-col gap-2">
-        <p className="font-display text-sm font-light tracking-[0.12em] uppercase text-text-primary/75">
+      <div className="px-5 py-4 text-center flex flex-col gap-2">
+        <p className="font-sans font-light text-xs tracking-[0.25em] uppercase text-text-primary/75">
           {t("subtitle")}
         </p>
-        <p className="font-display text-sm font-light text-text-primary/65 leading-relaxed">
+        <p className="font-sans font-light text-xs text-text-primary/65 leading-relaxed">
           {t("tagline")}
         </p>
       </div>
@@ -84,7 +84,7 @@ function HomePageInner({ galleryImages }: HomePageShellProps) {
         </div>
 
         <HeroSection>
-          <SectionPanel section={section}>
+          <SectionPanel section={section} onClose={() => handleSectionChange("none")}>
             {renderSection()}
           </SectionPanel>
         </HeroSection>
