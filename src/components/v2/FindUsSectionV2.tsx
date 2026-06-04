@@ -1,31 +1,31 @@
 import { useTranslations } from "next-intl";
 
 function Dot() {
-  return <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0 mt-[0.45em]" aria-hidden="true" />;
+  return <span className="w-1.5 h-1.5 rounded-full bg-[#F5C400] shrink-0 mt-[0.45em]" aria-hidden="true" />;
 }
 
 export function FindUsSectionV2() {
   const t = useTranslations("sections.findUs");
 
   return (
-    <section id="findus" className="bg-bg py-20 px-6 md:px-14 lg:px-20">
+    <section id="findus" className="bg-[#F5F5F0] py-20 px-6 md:px-14 lg:px-20">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
         {/* Info */}
         <div>
-          <p className="font-sans text-[0.6rem] tracking-[0.4em] uppercase text-accent mb-3">
-            {t("title")}
-          </p>
-          <h2 className="font-sans font-bold text-2xl lg:text-3xl uppercase text-white mb-8 leading-tight">
-            {t("title")}
-          </h2>
+        <p className="font-sans font-medium text-[0.65rem] tracking-[0.4em] uppercase text-[#F5C400] mb-3">
+          {t("title")}
+        </p>
+        <h2 className="font-sans font-bold text-2xl lg:text-3xl uppercase text-[#1A1A1A] mb-8 leading-tight">
+          {t("title")}
+        </h2>
 
-          <div className="space-y-6">
+        <div className="space-y-6">
             <div>
-              <p className="font-sans text-[0.6rem] tracking-[0.35em] uppercase text-white/40 mb-2">
+              <p className="font-sans font-medium text-[0.6rem] tracking-[0.35em] uppercase text-[#888] mb-2">
                 {t("addressLabel")}
               </p>
-              <p className="font-sans font-light text-sm text-white/75 whitespace-pre-line leading-relaxed">
+              <p className="font-sans font-normal text-sm text-[#444] whitespace-pre-line leading-relaxed">
                 {t("address")}
               </p>
             </div>
@@ -34,24 +34,24 @@ export function FindUsSectionV2() {
               {[t("entranceZizkov"), t("entranceKarlin")].map((line) => (
                 <div key={line} className="flex items-start gap-2.5">
                   <Dot />
-                  <p className="font-sans font-light text-sm text-white/65 leading-relaxed">{line}</p>
+                  <p className="font-sans font-normal text-sm text-[#444] leading-relaxed">{line}</p>
                 </div>
               ))}
             </div>
 
             <div>
-              <p className="font-sans text-[0.6rem] tracking-[0.35em] uppercase text-white/40 mb-2">
+              <p className="font-sans font-medium text-[0.6rem] tracking-[0.35em] uppercase text-[#888] mb-2">
                 {t("transportLabel")}
               </p>
               <div className="flex items-start gap-2.5">
                 <Dot />
-                <p className="font-sans font-light text-sm text-white/65 leading-relaxed">
+                <p className="font-sans font-normal text-sm text-[#444] leading-relaxed">
                   {t("transport")}
                 </p>
               </div>
             </div>
 
-            <p className="font-sans font-light text-xs text-white/35 italic">
+            <p className="font-sans font-normal text-xs text-[#888] italic">
               {t("mapNote")}
             </p>
           </div>

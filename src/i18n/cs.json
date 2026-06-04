@@ -44,7 +44,10 @@
         "label": "Proč právě Žižkovský tunel?",
         "item0": "Výjimečná architektura",
         "item1": "Denní kontakt s veřejností",
-        "item2": "Kulturní potenciál"
+        "item2": "Kulturní potenciál",
+        "desc0": "Jedinečný prostor s výraznou atmosférou a historickou hodnotou.",
+        "desc1": "Tisíce lidí prochází tunelem každý den a přirozeně se setkávají s uměním.",
+        "desc2": "Možnost vytvořit nový symbol současné Prahy otevřený všem."
       }
     },
     "founders": {

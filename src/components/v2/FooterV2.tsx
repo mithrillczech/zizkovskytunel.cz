@@ -18,9 +18,9 @@ function FacebookIcon() {
 
 export function FooterV2() {
   return (
-    <footer className="bg-black border-t border-white/8 py-8 px-6 md:px-14 lg:px-20">
+    <footer className="bg-[#1A1A1A] border-t border-white/5 py-8 px-6 md:px-14 lg:px-20">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        <span className="font-sans font-bold text-lg tracking-[0.1em] text-white uppercase">
+        <span className="font-sans font-extrabold text-lg tracking-tight text-[#F5C400] uppercase">
           TUNEL!
         </span>
 

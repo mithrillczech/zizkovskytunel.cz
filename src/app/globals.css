@@ -16,6 +16,14 @@
   --font-family-display: var(--font-cormorant), Georgia, serif;
   --font-family-sans: var(--font-dm-sans), system-ui, sans-serif;
 
+  /* V2 design system */
+  --color-v2-accent:     #F5C400;
+  --color-v2-dark:       #1A1A1A;
+  --color-v2-light:      #F5F5F0;
+  --color-v2-text-dark:  #1A1A1A;
+  --color-v2-text-body:  #444444;
+  --color-v2-text-muted: #AAAAAA;
+
   /* Custom easings */
   --ease-tunnel-in: cubic-bezier(0.4, 0, 1, 1);
   --ease-tunnel-out: cubic-bezier(0, 0, 0.2, 1);

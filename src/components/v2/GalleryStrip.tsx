@@ -152,7 +152,7 @@ export function GalleryStrip({ images }: GalleryStripProps) {
     <section id="gallery" className="bg-black py-16">
       {/* Section label */}
       <div className="px-6 md:px-14 lg:px-20 mb-8">
-        <p className="font-sans text-[0.6rem] tracking-[0.4em] uppercase text-accent">
+        <p className="font-sans font-medium text-[0.65rem] tracking-[0.4em] uppercase text-[#F5C400]">
           Galerie
         </p>
       </div>
