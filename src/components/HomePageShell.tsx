@@ -20,20 +20,16 @@ import { useTranslations } from "next-intl";
 function MobileHeroText() {
   const t = useTranslations("hero");
   return (
-    <>
-      <p className="font-sans text-[0.5rem] tracking-[0.4em] uppercase text-text-muted mb-3">
-        {t("eyebrow")}
-      </p>
-      <h2 className="font-display text-5xl font-light tracking-[0.1em] uppercase text-accent leading-none mb-3">
-        {t("headline")}
-      </h2>
-      <p className="font-sans text-[0.55rem] tracking-[0.25em] uppercase text-text-primary/60 max-w-[240px] mb-3">
-        {t("subtitle")}
-      </p>
-      <p className="font-display text-sm font-light italic text-text-primary/55 max-w-[260px] leading-relaxed">
-        {t("tagline")}
-      </p>
-    </>
+    <div className="w-full h-full flex flex-col justify-end pb-5 px-5">
+      <div className="bg-black/25 backdrop-blur-[2px] border border-white/6 px-5 py-4 text-center flex flex-col gap-2">
+        <p className="font-display text-sm font-light tracking-[0.12em] uppercase text-text-primary/75">
+          {t("subtitle")}
+        </p>
+        <p className="font-display text-sm font-light text-text-primary/65 leading-relaxed">
+          {t("tagline")}
+        </p>
+      </div>
+    </div>
   );
 }
 
@@ -118,7 +114,7 @@ function HomePageInner({ galleryImages }: HomePageShellProps) {
           {/* Dark overlay for legibility */}
           <div className="absolute inset-0 bg-bg/40" aria-hidden="true" />
           {/* Hero text */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 pb-4">
+          <div className="absolute inset-0">
             <MobileHeroText />
           </div>
           {/* Bottom fade to background */}
