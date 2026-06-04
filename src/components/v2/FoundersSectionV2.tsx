@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
@@ -9,6 +12,21 @@ const FOUNDER_PHOTOS: Record<string, string> = {
 };
 
 const FOUNDERS = ["Martin Wichterle", "Jiří Řezák", "David Koller", "Jiří Fajt"];
+
+function FounderPhoto({ src, name }: { src: string; name: string }) {
+  const [failed, setFailed] = useState(false);
+  const imgSrc = failed ? "/img/founders/placeholder.svg" : src;
+  return (
+    <Image
+      src={imgSrc}
+      alt={name}
+      fill
+      className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-500"
+      sizes="(max-width: 768px) 50vw, 25vw"
+      onError={() => setFailed(true)}
+    />
+  );
+}
 
 export function FoundersSectionV2() {
   const t = useTranslations("sections.founders");
@@ -30,14 +48,7 @@ export function FoundersSectionV2() {
               <div key={name} className="flex flex-col">
                 {/* Photo */}
                 <div className="relative w-full aspect-square overflow-hidden mb-4 bg-surface">
-                  <Image
-                    src={photo ?? "/img/founders/placeholder.svg"}
-                    alt={name}
-                    fill
-                    className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-500"
-                    sizes="(max-width: 768px) 50vw, 25vw"
-                    onError={() => {}}
-                  />
+                  <FounderPhoto src={photo} name={name} />
                   {/* bottom gradient */}
                   <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/60 to-transparent" />
                 </div>
