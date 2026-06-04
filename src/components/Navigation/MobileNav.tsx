@@ -55,8 +55,8 @@ export function MobileNav({ activeSection, onSectionChange }: MobileNavProps) {
   return (
     <>
       {/* Sticky mobile header */}
-      <header className="lg:hidden sticky top-0 z-50 flex items-center h-14 px-6 bg-bg/95 backdrop-blur-md border-b border-white/5">
-        <span className="flex-1 text-center font-display text-xl font-bold tracking-[0.12em] uppercase text-accent">
+      <header className="lg:hidden sticky top-0 z-50 flex items-center h-14 px-6 bg-black border-b border-white/5">
+        <span className="flex-1 text-center font-sans text-xl font-bold tracking-[0.12em] uppercase text-white">
           {th("highlight")}
         </span>
         <button
