@@ -19,35 +19,29 @@
     "about": {
       "title": "O projektu",
       "intro": {
-        "heading": "Tunel jako galerie",
-        "p1": "Spolek Žižkovského tunelu vznikl v roce 2025 s cílem proměnit dnes převážně tranzitní prostor v kurátorsky vedenou galerii současného umění.",
-        "p2": "Projekt propojuje architekturu, umění a veřejný prostor a vytváří nové místo pro setkávání obyvatel i návštěvníků Prahy."
+        "heading": "Proměňujeme Žižkovský tunel v galerii současného umění",
+        "p1": "Spolek žižkovského tunelu je nezávislá iniciativa založená v roce 2025 osobnostmi z oblasti architektury, umění, kultury a podnikání. Jeho cílem je proměnit Žižkovský tunel v unikátní veřejný prostor, který propojí město nejen dopravně, ale také kulturně a společensky.",
+        "p2": "Projekt vznikl z přesvědčení, že i běžná městská infrastruktura může získat nový význam a stát se místem setkávání, inspirace a současného umění. Žižkovský tunel má ambici stát se novým kulturním symbolem Prahy a součástí její moderní identity."
       },
       "vision": {
         "label": "Vize",
-        "heading": "Nová kulturní osa Prahy",
-        "item0": "Propojujeme Žižkov, Karlín a Holešovice.",
-        "item1": "Místo pro umění, inspiraci a společné zážitky.",
-        "item2": "Nový symbol současné Prahy."
+        "heading": "Myšlenka projektu",
+        "p1": "Dnes je Žižkovský tunel především tranzitním prostorem spojujícím Žižkov a Karlín. Nachází se však v jedné z nejdynamičtěji se rozvíjejících částí města a vytváří přirozenou spojnici mezi významnými kulturními lokalitami Žižkova, Karlína a Holešovic.",
+        "p2": "Cílem projektu je proměnit tento jedinečný prostor v kurátorsky vedenou galerii současného umění, která bude volně přístupná veřejnosti a nabídne nový způsob, jak zažívat kulturu přímo v ulicích města.",
+        "p3": "Inspirací jsou světové projekty, které dokázaly proměnit původně technickou infrastrukturu ve významná kulturní a společenská centra."
       },
       "how": {
         "label": "Jak to bude fungovat",
-        "heading": "3 nová díla každý rok",
-        "feature0": "Kurátorský výběr",
-        "feature1": "Site-specific instalace",
-        "feature2": "Respekt k architektuře",
-        "feature3": "Bezpečnost a funkčnost",
-        "feature4": "Vernisáže a komunitní akce",
-        "note": "Po dobu 10 let budou do tunelu instalována díla českých i zahraničních umělců."
+        "heading": "Jak bude galerie fungovat",
+        "p1": "Projekt je koncipován jako dlouhodobá iniciativa. Každý rok budou v tunelu instalována nová umělecká díla českých i zahraničních autorů, vytvořená přímo pro tento specifický prostor.",
+        "p2": "Jednotlivé instalace budou vznikat pod odborným kurátorským vedením a budou respektovat architekturu tunelu, jeho atmosféru i technické a bezpečnostní požadavky. Díky tomu zůstane tunel plně průchozí a funkční pro každodenní využití.",
+        "p3": "Součástí projektu je také kultivace vstupních prostor, kde vzniknou menší veřejná prostranství určená pro vernisáže, kulturní akce, setkávání a doprovodný program."
       },
       "why": {
         "label": "Proč právě Žižkovský tunel?",
-        "item0": "Výjimečná architektura",
-        "item1": "Denní kontakt s veřejností",
-        "item2": "Kulturní potenciál",
-        "desc0": "Jedinečný prostor s výraznou atmosférou a historickou hodnotou.",
-        "desc1": "Tisíce lidí prochází tunelem každý den a přirozeně se setkávají s uměním.",
-        "desc2": "Možnost vytvořit nový symbol současné Prahy otevřený všem."
+        "heading": "Kulturní osa moderní Prahy",
+        "p1": "Žižkovský tunel má potenciál propojit významná kulturní místa současné Prahy – od Holešovic a DOXu přes Karlín a budoucí Vltavskou filharmonii až po Tachovské náměstí a Nákladové nádraží Žižkov.",
+        "p2": "Projekt chce posílit kulturní identitu této části města a vytvořit otevřený prostor, který bude přístupný všem bez vstupného a stane se přirozenou součástí každodenního života Pražanů i návštěvníků metropole."
       }
     },
     "founders": {
@@ -76,14 +70,14 @@
       "subtitle": "Seznamte se s Žižkovským tunelem"
     },
     "findUs": {
-      "title": "Jak nás najít",
-      "address": "Žižkovský tunel\nPraha 3 — Žižkov / Karlín / Holešovice",
-      "entranceZizkov": "Vstup od Žižkova: ulice Seifertova, poblíž Náměstí Winstona Churchilla.",
-      "entranceKarlin": "Vstup od Karlína: ulice Šaldova.",
-      "transport": "MHD: Metro B Florenc, tramvaj Tachovské náměstí nebo Lipanská.",
+      "title": "Kontakt",
+      "orgName": "Spolek žižkovského tunelu",
+      "icoLabel": "IČO",
+      "ico": "22546057",
       "addressLabel": "Adresa",
-      "transportLabel": "Doprava",
-      "mapNote": "Tunel je přístupný denně pro pěší a cyklisty."
+      "address": "Pod dráhou 1638/7\nHolešovice (Praha 7)\n170 00 Praha",
+      "emailLabel": "E-mail",
+      "email": "info@zizkovskytunel.cz"
     }
   },
   "footer": {

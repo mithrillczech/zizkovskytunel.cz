@@ -19,35 +19,29 @@
     "about": {
       "title": "About the Project",
       "intro": {
-        "heading": "The tunnel as a gallery",
-        "p1": "The Žižkov Tunnel Association was founded in 2025 with the goal of transforming a predominantly transit space into a curated gallery of contemporary art.",
-        "p2": "The project brings together architecture, art and public space, creating a new place for residents and visitors of Prague to meet."
+        "heading": "Transforming the Žižkov Tunnel into a contemporary art gallery",
+        "p1": "The Žižkov Tunnel Association is an independent initiative founded in 2025 by figures from the fields of architecture, art, culture and business. Its aim is to transform the Žižkov Tunnel into a unique public space that connects the city not only in terms of transport, but also culturally and socially.",
+        "p2": "The project was born from the conviction that even everyday urban infrastructure can take on new meaning and become a place of encounter, inspiration and contemporary art. The Žižkov Tunnel aspires to become a new cultural symbol of Prague and a part of its modern identity."
       },
       "vision": {
         "label": "Vision",
-        "heading": "A new cultural axis of Prague",
-        "item0": "Connecting Žižkov, Karlín and Holešovice.",
-        "item1": "A place for art, inspiration and shared experiences.",
-        "item2": "A new symbol of contemporary Prague."
+        "heading": "The idea behind the project",
+        "p1": "Today the Žižkov Tunnel is primarily a transit space connecting Žižkov and Karlín. However, it is located in one of the most dynamically developing parts of the city and forms a natural link between the significant cultural localities of Žižkov, Karlín and Holešovice.",
+        "p2": "The aim of the project is to transform this unique space into a curator-led gallery of contemporary art that will be freely accessible to the public and offer a new way to experience culture directly in the city streets.",
+        "p3": "The inspiration comes from international projects that have succeeded in transforming originally technical infrastructure into significant cultural and social centres."
       },
       "how": {
         "label": "How it will work",
-        "heading": "3 new artworks every year",
-        "feature0": "Curatorial selection",
-        "feature1": "Site-specific installations",
-        "feature2": "Respect for the architecture",
-        "feature3": "Safety and functionality",
-        "feature4": "Openings and community events",
-        "note": "Over 10 years, works by Czech and international artists will be installed in the tunnel."
+        "heading": "How the gallery will work",
+        "p1": "The project is conceived as a long-term initiative. Each year new artworks by Czech and international artists, created specifically for this unique space, will be installed in the tunnel.",
+        "p2": "Individual installations will be developed under expert curatorial supervision and will respect the architecture of the tunnel, its atmosphere and technical and safety requirements. This ensures that the tunnel remains fully passable and functional for everyday use.",
+        "p3": "The project also includes the cultivation of the entrance areas, where smaller public spaces will be created for openings, cultural events, gatherings and accompanying programmes."
       },
       "why": {
         "label": "Why the Žižkov Tunnel?",
-        "item0": "Exceptional architecture",
-        "item1": "Daily contact with the public",
-        "item2": "Cultural potential",
-        "desc0": "A unique space with a distinctive atmosphere and historical value.",
-        "desc1": "Thousands of people pass through the tunnel every day, naturally encountering art.",
-        "desc2": "The chance to create a new symbol of contemporary Prague, open to all."
+        "heading": "Cultural axis of modern Prague",
+        "p1": "The Žižkov Tunnel has the potential to connect significant cultural locations of contemporary Prague — from Holešovice and DOX through Karlín and the future Vltava Philharmonic to Tachovské náměstí and the Žižkov Freight Station.",
+        "p2": "The project aims to strengthen the cultural identity of this part of the city and create an open space that is accessible to everyone free of charge and becomes a natural part of everyday life for Praguers and visitors to the city."
       }
     },
     "founders": {
@@ -76,14 +70,14 @@
       "subtitle": "Get to know the Žižkov Tunnel"
     },
     "findUs": {
-      "title": "How to Find Us",
-      "address": "Žižkov Tunnel\nPrague 3 — Žižkov / Karlín / Holešovice",
-      "entranceZizkov": "Entrance from Žižkov: Seifertova street, near Náměstí Winstona Churchilla.",
-      "entranceKarlin": "Entrance from Karlín: Šaldova street.",
-      "transport": "Public transport: Metro B Florenc, tram Tachovské náměstí or Lipanská.",
+      "title": "Contact",
+      "orgName": "Žižkov Tunnel Association",
+      "icoLabel": "Registration No.",
+      "ico": "22546057",
       "addressLabel": "Address",
-      "transportLabel": "Transport",
-      "mapNote": "The tunnel is open daily to pedestrians and cyclists."
+      "address": "Pod dráhou 1638/7\nHolešovice (Praha 7)\n170 00 Praha",
+      "emailLabel": "E-mail",
+      "email": "info@zizkovskytunel.cz"
     }
   },
   "footer": {

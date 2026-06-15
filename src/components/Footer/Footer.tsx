@@ -1,4 +1,3 @@
-import { useTranslations } from "next-intl";
 import type { SectionId } from "@/types";
 
 function InstagramIcon() {
@@ -24,35 +23,10 @@ interface FooterProps {
 }
 
 export function Footer({ onSectionChange: _ }: FooterProps) {
-  const ta = useTranslations("accessibility");
 
   return (
     <footer className="fixed bottom-0 left-0 right-0 z-40 bg-footer-bg text-footer-text">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col items-center gap-2">
-
-        {/* Social icons — centered */}
-        <div className="flex items-center gap-5">
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white/55 hover:text-white/90 transition-colors duration-150"
-            aria-label={ta("instagramLink")}
-          >
-            <InstagramIcon />
-          </a>
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white/55 hover:text-white/90 transition-colors duration-150"
-            aria-label={ta("facebookLink")}
-          >
-            <FacebookIcon />
-          </a>
-        </div>
-
-        {/* Copyright — centered */}
+      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-center">
         <p className="font-sans text-[0.6rem] text-white/30 tracking-wide">
           © Spolek žižkovského tunelu
         </p>

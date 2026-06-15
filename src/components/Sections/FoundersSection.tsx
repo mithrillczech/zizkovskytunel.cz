@@ -1,33 +1,66 @@
+"use client";
+
+import { useState } from "react";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
+
+const FOUNDER_PHOTOS: Record<string, string> = {
+  "Martin Wichterle": "/img/founders/martin-wichterle.jpg",
+  "Jiří Řezák":       "/img/founders/jiri-rezak.jpg",
+  "David Koller":     "/img/founders/david-koller.jpg",
+  "Jiří Fajt":        "/img/founders/jiri-fajt.jpg",
+};
+
+const FOUNDERS = ["Martin Wichterle", "Jiří Řezák", "David Koller", "Jiří Fajt"];
+
+function FounderPhoto({ src, name }: { src: string; name: string }) {
+  const [failed, setFailed] = useState(false);
+  const imgSrc = failed ? "/img/Founders/placeholder.svg" : src;
+  return (
+    <Image
+      src={imgSrc}
+      alt={name}
+      fill
+      className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-500"
+      sizes="(max-width: 768px) 50vw, 25vw"
+      onError={() => setFailed(true)}
+    />
+  );
+}
 
 export function FoundersSection() {
   const t = useTranslations("sections.founders");
 
-  const members = [
-    { name: "Martin Wichterle", role: t("list.0.role") },
-    { name: "Jiří Řezák",       role: t("list.1.role") },
-    { name: "David Koller",     role: t("list.2.role") },
-    { name: "Jiří Fajt",        role: t("list.3.role") },
-  ];
-
   return (
-    <div className="p-8 lg:p-12">
-      <h2 className="font-display text-4xl lg:text-5xl font-light tracking-wide text-text-primary mb-8">
+    <div className="p-8 lg:p-10">
+      <p className="font-sans text-[0.6rem] tracking-[0.4em] uppercase text-accent mb-1">
+        {t("title")}
+      </p>
+      <h2 className="font-sans text-3xl lg:text-4xl font-light tracking-wide text-text-primary mb-8">
         {t("title")}
       </h2>
 
-      <ul className="space-y-5 max-w-xl">
-        {members.map((member) => (
-          <li key={member.name} className="border-l border-accent/30 pl-4">
-            <p className="font-sans font-medium text-text-primary text-sm">
-              {member.name}
-            </p>
-            <p className="font-sans text-text-muted text-sm mt-0.5">
-              {member.role}
-            </p>
-          </li>
+      <div className="grid grid-cols-2 gap-5 lg:gap-6">
+        {FOUNDERS.map((name, i) => (
+          <div key={name} className="flex flex-col gap-3">
+            {/* Photo */}
+            <div className="relative w-full aspect-[3/4] overflow-hidden bg-surface">
+              <FounderPhoto src={FOUNDER_PHOTOS[name]} name={name} />
+              <div className="absolute bottom-0 left-0 right-0 h-1/4 bg-gradient-to-t from-black/60 to-transparent" />
+            </div>
+
+            {/* Name + role */}
+            <div className="border-l border-accent/30 pl-3">
+              <p className="font-sans font-medium text-sm text-text-primary leading-snug">
+                {name}
+              </p>
+              <p className="font-sans text-xs text-text-muted mt-0.5 leading-snug">
+                {t(`list.${i}.role`)}
+              </p>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
