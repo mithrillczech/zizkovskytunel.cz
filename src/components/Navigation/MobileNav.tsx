@@ -57,7 +57,7 @@ export function MobileNav({ activeSection, onSectionChange }: MobileNavProps) {
       {/* Sticky mobile header */}
       <header className="lg:hidden sticky top-0 z-50 flex items-center h-14 px-6 bg-black border-b border-white/5">
         <span className="flex-1 text-center font-sans text-xl font-bold tracking-[0.12em] uppercase text-white">
-          {th("highlight")}
+          TUNEL<span className="text-accent">!</span>
         </span>
         <button
           onClick={() => setIsOpen((v) => !v)}
