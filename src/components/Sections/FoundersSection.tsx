@@ -33,28 +33,25 @@ export function FoundersSection() {
 
   return (
     <div className="p-8 lg:p-10">
-      <p className="font-sans text-[0.6rem] tracking-[0.4em] uppercase text-accent mb-1">
+      <p className="font-sans text-[0.6rem] tracking-[0.4em] uppercase text-accent mb-6">
         {t("title")}
       </p>
-      <h2 className="font-sans text-3xl lg:text-4xl font-light tracking-wide text-text-primary mb-8">
-        {t("title")}
-      </h2>
 
-      <div className="grid grid-cols-2 gap-5 lg:gap-6">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
         {FOUNDERS.map((name, i) => (
-          <div key={name} className="flex flex-col gap-3">
-            {/* Photo */}
-            <div className="relative w-full aspect-[3/4] overflow-hidden bg-surface">
+          <div key={name} className="flex flex-col gap-2">
+            {/* Photo — square, compact */}
+            <div className="relative w-full aspect-square overflow-hidden bg-surface">
               <FounderPhoto src={FOUNDER_PHOTOS[name]} name={name} />
               <div className="absolute bottom-0 left-0 right-0 h-1/4 bg-gradient-to-t from-black/60 to-transparent" />
             </div>
 
             {/* Name + role */}
-            <div className="border-l border-accent/30 pl-3">
-              <p className="font-sans font-medium text-sm text-text-primary leading-snug">
+            <div className="border-l border-accent/30 pl-2.5">
+              <p className="font-sans font-medium text-xs text-text-primary leading-snug">
                 {name}
               </p>
-              <p className="font-sans text-xs text-text-muted mt-0.5 leading-snug">
+              <p className="font-sans text-[0.65rem] text-text-muted mt-0.5 leading-snug">
                 {t(`list.${i}.role`)}
               </p>
             </div>

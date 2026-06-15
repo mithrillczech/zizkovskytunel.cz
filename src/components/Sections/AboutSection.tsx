@@ -2,12 +2,11 @@ import { useTranslations } from "next-intl";
 
 interface BlockProps {
   align: "left" | "right";
-  label: string;
   heading: string;
   children: React.ReactNode;
 }
 
-function Block({ align, label, heading, children }: BlockProps) {
+function Block({ align, heading, children }: BlockProps) {
   const right = align === "right";
   return (
     <div className={`
@@ -16,9 +15,6 @@ function Block({ align, label, heading, children }: BlockProps) {
       border-accent/35
     `}>
       <p className="font-sans text-[0.6rem] tracking-[0.4em] uppercase text-accent">
-        {label}
-      </p>
-      <p className="font-sans text-xl lg:text-2xl font-light text-text-primary">
         {heading}
       </p>
       {children}
@@ -38,7 +34,7 @@ export function AboutSection() {
       </h2>
 
       {/* Block 1 — left */}
-      <Block align="left" label={t("intro.heading")} heading={t("intro.heading")}>
+      <Block align="left" heading={t("intro.heading")}>
         <p className="font-sans text-sm text-text-primary/80 leading-relaxed">
           {t("intro.p1")}
         </p>
@@ -48,7 +44,7 @@ export function AboutSection() {
       </Block>
 
       {/* Block 2 — right */}
-      <Block align="right" label={t("vision.label")} heading={t("vision.heading")}>
+      <Block align="right" heading={t("vision.heading")}>
         <p className="font-sans text-sm text-text-primary/80 leading-relaxed">
           {t("vision.p1")}
         </p>
@@ -61,7 +57,7 @@ export function AboutSection() {
       </Block>
 
       {/* Block 3 — left */}
-      <Block align="left" label={t("how.label")} heading={t("how.heading")}>
+      <Block align="left" heading={t("how.heading")}>
         <p className="font-sans text-sm text-text-primary/80 leading-relaxed">
           {t("how.p1")}
         </p>
@@ -74,7 +70,7 @@ export function AboutSection() {
       </Block>
 
       {/* Block 4 — right */}
-      <Block align="right" label={t("why.label")} heading={t("why.heading")}>
+      <Block align="right" heading={t("why.heading")}>
         <p className="font-sans text-sm text-text-primary/80 leading-relaxed">
           {t("why.p1")}
         </p>

@@ -90,8 +90,11 @@
     }
   },
   "meta": {
-    "title": "Žižkov Tunnel — Association",
-    "description": "Transforming the Žižkov Tunnel into a world-class art gallery. A project connecting Žižkov, Karlín and Holešovice — the cultural axis of Prague."
+    "siteName": "Žižkov Tunnel Association",
+    "title": "Žižkov Tunnel Association — Contemporary Art Gallery in Prague",
+    "description": "Transforming the Žižkov Tunnel into a curated gallery of contemporary art. An independent initiative connecting Žižkov, Karlín and Holešovice — a new cultural axis of Prague.",
+    "keywords": "Žižkov Tunnel, contemporary art gallery, Prague, Žižkov Tunnel Association, public art, Žižkov, Karlín, Holešovice, cultural projects Prague, site-specific art",
+    "ogImageAlt": "Žižkov Tunnel — view inside the tunnel"
   },
   "accessibility": {
     "openMenu": "Open menu",

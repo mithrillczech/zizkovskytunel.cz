@@ -90,8 +90,11 @@
     }
   },
   "meta": {
-    "title": "Žižkovský tunel — Spolek",
-    "description": "Transformujeme žižkovský tunel v galerii světového umění. Projekt propojující Žižkov, Karlín a Holešovice – kulturní osa Prahy."
+    "siteName": "Spolek žižkovského tunelu",
+    "title": "Spolek žižkovského tunelu — Galerie současného umění v Praze",
+    "description": "Proměňujeme Žižkovský tunel v kurátorsky vedenou galerii současného umění. Nezávislá iniciativa propojující Žižkov, Karlín a Holešovice – nová kulturní osa Prahy.",
+    "keywords": "Žižkovský tunel, galerie současného umění, Praha, Spolek žižkovského tunelu, veřejné umění, Žižkov, Karlín, Holešovice, kulturní projekty Praha, site-specific art, street art Praha",
+    "ogImageAlt": "Žižkovský tunel — pohled do tunelu"
   },
   "accessibility": {
     "openMenu": "Otevřít menu",

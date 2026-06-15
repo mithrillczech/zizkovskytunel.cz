@@ -30,7 +30,7 @@ export function FindUsSection() {
         {t("orgName")}
       </h2>
 
-      <div className="space-y-6 max-w-sm">
+      <div className="grid grid-cols-3 gap-6 lg:gap-10">
         <ContactRow label={t("icoLabel")} value={t("ico")} />
 
         <ContactRow label={t("addressLabel")} value={t("address")} />
