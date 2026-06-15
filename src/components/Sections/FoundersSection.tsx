@@ -5,10 +5,10 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 const FOUNDER_PHOTOS: Record<string, string> = {
-  "Martin Wichterle": "/img/founders/martin-wichterle.jpg",
-  "Jiří Řezák":       "/img/founders/jiri-rezak.jpg",
-  "David Koller":     "/img/founders/david-koller.jpg",
-  "Jiří Fajt":        "/img/founders/jiri-fajt.jpg",
+  "Martin Wichterle": "/img/Founders/martin-wichterle.jpg",
+  "Jiří Řezák":       "/img/Founders/jiri-rezak.jpg",
+  "David Koller":     "/img/Founders/david-koller.jpg",
+  "Jiří Fajt":        "/img/Founders/jiri-fajt.jpg",
 };
 
 const FOUNDERS = ["Martin Wichterle", "Jiří Řezák", "David Koller", "Jiří Fajt"];
