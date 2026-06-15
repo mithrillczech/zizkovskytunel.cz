@@ -46,6 +46,7 @@
     },
     "founders": {
       "title": "Founders",
+      "subtitle": "The people behind the project",
       "list": [
         {
           "name": "Martin Wichterle",

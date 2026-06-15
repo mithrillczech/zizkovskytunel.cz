@@ -33,8 +33,11 @@ export function FoundersSection() {
 
   return (
     <div className="p-8 lg:p-10">
-      <p className="font-sans text-[0.6rem] tracking-[0.4em] uppercase text-accent mb-6">
+      <h2 className="font-sans text-3xl lg:text-4xl font-light tracking-wide text-text-primary mb-2">
         {t("title")}
+      </h2>
+      <p className="font-sans text-[0.6rem] tracking-[0.4em] uppercase text-accent mb-6">
+        {t("subtitle")}
       </p>
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
