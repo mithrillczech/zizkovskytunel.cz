@@ -175,11 +175,7 @@ function GalleryGrid({ images }: { images: GalleryImage[] }) {
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                 sizes="(max-width: 1280px) 33vw, 400px"
               />
-              <div className="absolute inset-0 bg-bg/0 group-hover:bg-bg/40 transition-colors duration-300 flex items-end p-3 opacity-0 group-hover:opacity-100">
-                <span className="font-sans text-xs text-text-primary tracking-wide border-b border-accent pb-0.5">
-                  {img.alt}
-                </span>
-              </div>
+              <div className="absolute inset-0 bg-bg/0 group-hover:bg-bg/20 transition-colors duration-300" />
             </button>
           );
         })}
