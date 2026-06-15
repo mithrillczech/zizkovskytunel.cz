@@ -26,7 +26,7 @@ export function FindUsSection() {
       <h2 className="font-sans text-3xl lg:text-4xl font-light tracking-wide text-text-primary mb-1">
         {t("title")}
       </h2>
-      <p className="font-sans text-sm text-text-primary/55 mb-8">
+      <p className="font-sans text-base text-text-primary mt-4 mb-8">
         {t("orgName")}
       </p>
 
