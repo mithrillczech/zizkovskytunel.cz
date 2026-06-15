@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 
 const FOUNDER_PHOTOS: Record<string, string> = {
   "Martin Wichterle": "/img/Founders/martin-wichterle.jpg",
@@ -15,15 +14,13 @@ const FOUNDERS = ["Martin Wichterle", "Jiří Řezák", "David Koller", "Jiří 
 
 function FounderPhoto({ src, name }: { src: string; name: string }) {
   const [failed, setFailed] = useState(false);
-  const imgSrc = failed ? "/img/Founders/placeholder.svg" : src;
   return (
-    <Image
-      src={imgSrc}
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={failed ? "/img/Founders/placeholder.svg" : src}
       alt={name}
-      fill
-      className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-500"
-      sizes="(max-width: 768px) 50vw, 25vw"
       onError={() => setFailed(true)}
+      className="absolute inset-0 w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-500"
     />
   );
 }
