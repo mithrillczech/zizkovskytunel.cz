@@ -34,17 +34,6 @@ export function HeroOverlay({ section }: HeroOverlayProps) {
                 <p className="font-sans font-light text-sm xl:text-base text-text-primary/70 leading-relaxed max-w-md">
                   {t("tagline")}
                 </p>
-
-                <button className="
-                  mt-1
-                  font-sans font-light text-[0.65rem] tracking-[0.25em] uppercase
-                  px-8 py-3
-                  bg-accent text-bg
-                  hover:bg-accent-hover
-                  transition-colors duration-200
-                ">
-                  {t("cta")}
-                </button>
               </div>
             </div>
           </motion.div>
