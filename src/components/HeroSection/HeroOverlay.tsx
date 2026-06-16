@@ -24,9 +24,9 @@ export function HeroOverlay({ section }: HeroOverlayProps) {
             transition={{ duration: 0.35, ease: "easeOut" }}
             className="flex flex-col justify-end h-full"
           >
-            {/* ── BOTTOM: semi-transparent card ── */}
-            <div className="flex justify-center px-6 pb-2 pointer-events-auto">
-              <div className="w-full max-w-xl px-8 py-6 flex flex-col items-center gap-4 text-center">
+            {/* ── BOTTOM: dark tint stripe ── */}
+            <div className="pointer-events-auto bg-black/45 backdrop-blur-[2px] px-6 py-5 flex justify-center">
+              <div className="w-full max-w-xl flex flex-col items-center gap-3 text-center">
                 <p className="font-sans font-light text-sm xl:text-base tracking-[0.25em] uppercase text-text-primary/75">
                   {t("subtitle")}
                 </p>

@@ -20,8 +20,8 @@ import { useTranslations } from "next-intl";
 function MobileHeroText() {
   const t = useTranslations("hero");
   return (
-    <div className="w-full h-full flex flex-col justify-end pb-5 px-5">
-      <div className="px-5 py-4 text-center flex flex-col gap-2">
+    <div className="w-full h-full flex flex-col justify-end">
+      <div className="bg-black/45 backdrop-blur-[2px] px-5 py-4 text-center flex flex-col gap-2">
         <p className="font-sans font-light text-xs tracking-[0.25em] uppercase text-text-primary/75">
           {t("subtitle")}
         </p>
