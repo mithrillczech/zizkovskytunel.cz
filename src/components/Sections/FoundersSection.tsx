@@ -20,7 +20,7 @@ function FounderPhoto({ src, name }: { src: string; name: string }) {
       src={failed ? "/img/Founders/placeholder.svg" : src}
       alt={name}
       onError={() => setFailed(true)}
-      className="absolute inset-0 w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-500"
+      className="absolute inset-0 w-full h-full object-cover object-top md:grayscale md:hover:grayscale-0 transition-all duration-500"
     />
   );
 }
