@@ -42,8 +42,10 @@ function HomePageInner({ galleryImages }: HomePageShellProps) {
   const router = useRouter();
   const pathname = usePathname();
 
+  const VALID_SECTIONS: SectionId[] = ["none", "about", "gallery", "founders", "findus"];
+  const rawSection = searchParams.get("section") ?? "none";
   const [section, setSection] = useState<SectionId>(
-    (searchParams.get("section") ?? "none") as SectionId
+    VALID_SECTIONS.includes(rawSection as SectionId) ? (rawSection as SectionId) : "none"
   );
   const handleSectionChange = useCallback(
     (next: SectionId) => {
