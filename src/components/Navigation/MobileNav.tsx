@@ -56,9 +56,13 @@ export function MobileNav({ activeSection, onSectionChange }: MobileNavProps) {
     <>
       {/* Sticky mobile header */}
       <header className="lg:hidden sticky top-0 z-50 flex items-center h-14 px-6 bg-black border-b border-white/5">
-        <span className="flex-1 text-center font-sans text-xl font-bold tracking-[0.12em] uppercase text-white">
+        <button
+          onClick={() => { setIsOpen(false); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+          className="flex-1 text-center font-sans text-xl font-bold tracking-[0.12em] uppercase text-white"
+          aria-label="Přejít na začátek stránky"
+        >
           TUNEL<span className="text-accent">!</span>
-        </span>
+        </button>
         <button
           onClick={() => setIsOpen((v) => !v)}
           className="absolute right-6 text-text-primary p-1"
