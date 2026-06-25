@@ -278,7 +278,7 @@ export function GallerySection({ images = PLACEHOLDER_IMAGES, variant = "grid" }
   return (
     <div className="p-8 lg:p-10">
       <div className="mb-6">
-        <h2 className="font-sans text-3xl lg:text-4xl font-light tracking-wide text-text-primary mb-2">
+        <h2 className="font-sans text-3xl lg:text-4xl font-light tracking-wide text-text-primary mb-3">
           {t("title")}
         </h2>
         <p className="font-sans text-[0.6rem] tracking-[0.4em] uppercase text-accent">
